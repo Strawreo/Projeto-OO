@@ -5,9 +5,9 @@ import java.util.ArrayList;
 //Todos os itens consumíveis seguiram esta classe 
 
 
-public class Item_Consumível implements Item_Interface{
+public class Item_Consumível implements Item_Interface {
 	
-	String nome = "Nome Genérico";
+	String nome = "Item Consumível";
 	protected int id; // cria o id específico do item DENTRO do inventário 
 	int VidaAtual = 100; //Futuramente esta seria a Vida Atual do personagem selecionado.
 	ArrayList<String> InventarioSimples = new ArrayList <>(); //Futuramente será o  do inventário, em formato array 
