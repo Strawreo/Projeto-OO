@@ -1,6 +1,6 @@
 package poo;
 
-public class Personagem {
+public abstract class Personagem {
 	
 	/*
 	 * Criação da classe principal personagem que vai se derivar as classes de cada
@@ -18,7 +18,7 @@ public class Personagem {
 	
 	
 	 Personagem(String nome, int vida, int fome, int sede, int energia, int sanidade, String inventário, int localização) {
-		//Aqui tem o método do personagem com todos os atributos
+		//Aqui tem o Construtor do personagem com todos os atributos
 		
 		
 		this.nome = nome;
@@ -30,28 +30,12 @@ public class Personagem {
 		this.inventário = inventário;
 		this.localização = localização;
 	}
-	 void sentirFome() {
-		 System.out.println("Sentindo fome");
-		 fome += 10;
-		 if(fome >= 40) {
-			 vida -=2;
-		 }else {
-			 
-		 }
-		 System.out.println("A vida atual é " + vida);
-		 System.out.println("A fome atual é " + fome);
-		 
-	 }
-	 void sentirSede() {
-		 System.out.println("Sentindo sede");
-		 sede += 10;
-		 if(sede >= 40) {
-			 vida -=2;
-		 }else {
-			 
-		 }
-		 System.out.println("A vida atual é " + vida);
-		 System.out.println("A sede atual é " + sede);
-		 
-	 }
+	 
+	 //Aqui eu crio o método toString para retornar todos os parametros da classe Super
+	 //e assim eu só chamar o metodo nas classes filho para printar os stats da classe
+	 
+	 public String toString() {
+			return this.nome + "\n" + this.vida + "\n" + this.fome + "\n" + this.sede + "\n" + this.energia + "\n" + this.sanidade + "\n" + this.inventário + "\n" + this.localização + "\n";
+			
+		}
 }

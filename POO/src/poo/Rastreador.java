@@ -1,11 +1,11 @@
 package poo;
 
 public class Rastreador extends Personagem {
-	public Rastreador() {
+	public Rastreador(String nome, int vida, int fome, int sede, int energia, int sanidade, String inventário, int localização) {
 		/*
 		 *  super que chama os atributos da classe "pai" que seria personagem
 		 */
-		super("Diego", 100, 0, 0, 100, 100, "Vazio", 22);
+		super(nome, vida, fome, sede, energia, sanidade, inventário, localização);
 	}
 	
 	
@@ -56,7 +56,7 @@ public class Rastreador extends Personagem {
 	 * System.out.println(localização); }
 	 */
 	public String toString() {
-		return nome + "\n" + vida + "\n" + fome + "\n" + sede + "\n" + energia + "\n" + sanidade + "\n" + inventário + "\n" + localização + "\n";
+		return super.toString();
 		
 	}
 }

@@ -2,8 +2,8 @@ package poo;
 
 public class Médico extends Personagem{
 
-	public Médico() {
-		super("Erick", 150, 0, 0, 100, 100, "Vazio", 22);
+	public Médico(String nome, int vida, int fome, int sede, int energia, int sanidade, String inventário, int localização) {
+		super(nome, vida, fome, sede, energia, sanidade, inventário, localização);
 	}
 	
 	void sentirFome() {
@@ -30,7 +30,7 @@ public class Médico extends Personagem{
 		 System.out.println("A sede atual é " + sede);
 	}
 	public String toString() {
-		return nome + "\n" + vida + "\n" + fome + "\n" + sede + "\n" + energia + "\n" + sanidade + "\n" + inventário + "\n" + localização + "\n";
+		return super.toString();
 		
 	}
 }
