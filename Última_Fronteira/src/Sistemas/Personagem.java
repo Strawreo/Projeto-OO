@@ -13,11 +13,11 @@ public class Personagem {
 	int sede;
 	int energia;
 	int sanidade;
-	String inventário;
+	int tamanhoInv;
 	int localização;
 	
 	
-	public Personagem(String nome, int vida, int fome, int sede, int energia, int sanidade, String inventário, int localização) {
+	public Personagem(String nome, int vida, int fome, int sede, int energia, int sanidade, int tamanhoInv, int localização) {
 		//Aqui tem o método do personagem com todos os atributos
 		
 		
@@ -27,7 +27,7 @@ public class Personagem {
 		this.sede = sede;
 		this.energia = energia;
 		this.sanidade = sanidade;
-		this.inventário = inventário;
+		this.tamanhoInv = tamanhoInv;
 		this.localização = localização;
 	}
 }

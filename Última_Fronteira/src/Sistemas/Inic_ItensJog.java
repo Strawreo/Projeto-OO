@@ -8,7 +8,7 @@ public ArrayList<Class_Item> Inicializar_ItensJog(){
 		
 		ArrayList<Class_Item> ArrayItensJog = new ArrayList<>();
 		
-		ArrayItensJog.add(new Item_Jogável("Template",10));
+		ArrayItensJog.add(new Item_Jogável("Garrafa de vidro",10));
 		ArrayItensJog.add(new Item_Jogável("Template",10));
 		ArrayItensJog.add(new Item_Jogável("Template",10));
 		ArrayItensJog.add(new Item_Jogável("Template",10));

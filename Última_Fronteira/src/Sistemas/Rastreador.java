@@ -5,7 +5,7 @@ public class Rastreador extends Personagem {
 		/*
 		 * // super que chama os atributos da classe "pai" que seria personagem
 		 */
-		super("Diego", 100, 0, 0, 100, 100, "Vazio", 22);
+		super("Diego", 100, 0, 0, 100, 100, 10, 22);
 	}
 	
 	/*
@@ -51,7 +51,7 @@ public class Rastreador extends Personagem {
 		System.out.println(sedeAtual);
 		System.out.println(energia);
 		System.out.println(sanidade);
-		System.out.println(inventário);
+		System.out.println(tamanhoInv);
 		System.out.println(localização);
 	}
 }

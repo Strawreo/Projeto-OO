@@ -12,6 +12,12 @@ public class Item_Usável extends Class_Item {
 		this.vel = vel;
 	}
 	
+	public void usar(int VidaAtual) {
+		
+		VidaAtual += vida;
+		
+	}
+	
 	
 }
 

@@ -9,19 +9,15 @@ public class Inventario {
 	
 	ArrayList<Class_Item> inventario = new ArrayList<>(); 
 	
-	public Inventario(int tamanho) 
-	//Construtor da Classe Inventário, cada pode-se modificar o tamanho da array para personagens específicos 
-	{
+	public Inventario(int tamanho)  {
 		this.tamanho = tamanho;
 	}
 	
-	public void obter(Class_Item item) 
-	//Obtém o item e o adiciona na array, junto com o seu id específico
-	{
+	public void obter(Class_Item item) {
 		if (inventario.size() > tamanho) {
 			
 			System.out.println("Inventário Cheio!!");
-			//Se o inventário estiver cheio não roda.
+			
 			
 		} else {
 			
@@ -31,17 +27,37 @@ public class Inventario {
 		
 	}
 	
-	public void descartar(Class_Item item) 
-	//Remove Itens específicos 
-	{
-		inventario.remove(item);
+	public void descartar(Class_Item item) {
+		int id = inventario.indexOf(item);
+		inventario.remove(id);
 	}
 	
 	
-	public void ler() 
-	{
-		System.out.println(inventario);
+	public void ler() {
+		
+		System.out.println("Inventário:");
+		
+		for (int i = 0; i < inventario.size() ; i++) {
+			
+			if (inventario.get(i) != null) {
+				
+				System.out.println(inventario.get(i).GetNome());
+				
+			} else {
+				
+				System.out.println("Slot Vazio");
+				
+			}
+				
+		}
+		
 	}
+			
+			
+			
+		
+		
+		
 	
 	
 	

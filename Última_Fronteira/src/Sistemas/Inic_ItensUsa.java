@@ -8,7 +8,7 @@ public ArrayList<Class_Item> Inicializar_ItensUsa(){
 		
 		ArrayList<Class_Item> ArrayItensUsa = new ArrayList<>();
 		
-		ArrayItensUsa.add(new Item_Usável("Template_Usa",0,0));
+		ArrayItensUsa.add(new Item_Usável("Bandagens",10,0));
 		ArrayItensUsa.add(new Item_Usável("Template",0,0));
 		ArrayItensUsa.add(new Item_Usável("Template",0,0));
 		ArrayItensUsa.add(new Item_Usável("Template",0,0));
