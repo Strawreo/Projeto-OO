@@ -53,6 +53,7 @@ public class Inventario {
 		
 	}
 			
+}
 			
 			
 		
@@ -62,4 +63,3 @@ public class Inventario {
 	
 	
 
-}
