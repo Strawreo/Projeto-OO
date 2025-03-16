@@ -2,23 +2,14 @@ package Sistemas;
 
 public class Class_Item {
 
-	String tipo;
-	int vida;
-	int defesa;
-	int velocidade;
-	int dano;
+	String nome;
 	
-	public void Item(String tipo, int vida, int defesa, int velocidade, int dano) //Estrutura básica de todos os itens 
-	
+	public Class_Item(String nome) //Estrutura básica de todos os itens 
 	
 	{
+		this.nome = nome;
 		
-		this.tipo = tipo;
-		this.vida = vida;
-		this.defesa = defesa;
-		this.velocidade = velocidade;
-		this.dano = dano;
-		
+		System.out.println(nome);
 	}
 
 }
