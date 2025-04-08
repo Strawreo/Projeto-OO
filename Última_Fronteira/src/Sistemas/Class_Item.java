@@ -12,9 +12,5 @@ public class Class_Item {
 		System.out.println(nome);
 	}
 	
-	public String GetNome() {
-		
-		return nome;
-	}
 
 }

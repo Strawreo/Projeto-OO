@@ -4,14 +4,14 @@ import java.util.ArrayList;
 public class Inventario {
 	
 	int tamanho;
-	String tipo;
-	int vida,defesa,velocidade,dano;
 	
 	ArrayList<Class_Item> inventario = new ArrayList<>(); 
 	
 	public Inventario(int tamanho)  {
 		this.tamanho = tamanho;
+		
 	}
+		
 	
 	public void obter(Class_Item item) {
 		if (inventario.size() > tamanho) {
@@ -41,7 +41,7 @@ public class Inventario {
 			
 			if (inventario.get(i) != null) {
 				
-				System.out.println(inventario.get(i).GetNome());
+				System.out.println(inventario.get(i).nome);
 				
 			} else {
 				
@@ -55,11 +55,3 @@ public class Inventario {
 			
 }
 			
-			
-		
-		
-		
-	
-	
-	
-

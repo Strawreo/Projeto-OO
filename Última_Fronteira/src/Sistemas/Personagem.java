@@ -15,12 +15,15 @@ public class Personagem {
 	int sanidade;
 	int tamanhoInv;
 	int localização;
+	Inventario inventario; 
+	
 	
 	
 	public Personagem(String nome, int vida, int fome, int sede, int energia, int sanidade, int tamanhoInv, int localização) {
 		//Aqui tem o método do personagem com todos os atributos
 		
-		
+		this.inventario = new Inventario(10);
+	
 		this.nome = nome;
 		this.vida = vida;
 		this.fome = fome;
