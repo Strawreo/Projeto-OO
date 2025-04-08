@@ -1,6 +1,8 @@
 package poo;
 
 public class Rastreador extends Personagem {
+
+
 	public Rastreador(String nome, int vida, int fome, int sede, int energia, int sanidade, String inventário, int localização) {
 		/*
 		 *  super que chama os atributos da classe "pai" que seria personagem
@@ -15,31 +17,17 @@ public class Rastreador extends Personagem {
 	 * enquanto
 	 */
 	
-	void sentirFome() {
-		System.out.println("Sentindo fome...");
-		fome += 10;
-		if(fome >= 40) {
-			vida-= 2;
-		}else {
-			
-		}
-		System.out.println("Vida atual é " + vida);
-		System.out.println("Fome atual é " + fome);
+	
+	public void sentirFome(int dano) {
 		
 	}
 	
-	void sentirSede() {
-		 System.out.println("Sentindo sede...");
-		 sede += 20;
-		 if(sede >= 40) {
-			 vida -=2;
-		 }else {
-			 
-		 }
-		 System.out.println("A vida atual é " + vida);
-		 System.out.println("A sede atual é " + sede);
-		 
+	public void sentirSede() {
+		
 	 }
+	public void mostrarFome() {
+		System.out.println("A fome do personagem é: " + super.getFome());
+	}
 	public void perderVida() {
 	
 	}

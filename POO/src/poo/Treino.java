@@ -13,8 +13,9 @@ public class Treino {
 		
 		
 
-		
-		for (int i = 0; i < 3; i++) { // Simula 5 rodadas de jogo
+		jogador.sentirFome(10);	
+		jogador.mostrarFome();
+		for (int i = 0; i < 3; i++) { // Simula 3 rodadas de jogo
             System.out.println("\nRodada " + (i + 1) + " no ambiente: Floresta");
 
             Evento eventoSorteado = gerenciador.sortearEvento(ambienteAtual);
@@ -29,11 +30,8 @@ public class Treino {
 		
 		
 		System.out.println(jogador.toString());
-		/*
-		 * diego.sentirFome(); diego.sentirFome(); diego.sentirFome();
-		 * diego.sentirFome(); diego.sentirFome(); diego.sentirSede();
-		 * diego.sentirSede(); diego.sentirSede();
-		 */
+		
+		jogador.sentirFome(10);
 
 		System.out.println(jogador.toString());
 

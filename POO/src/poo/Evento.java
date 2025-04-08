@@ -2,6 +2,10 @@ package poo;
 
 public interface Evento {
 	
-	void executar(Rastreador jogador);
+	void executar(Personagem jogador);
+	
+	default void teste(){
+		
+	}
 
 }
