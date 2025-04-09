@@ -2,7 +2,7 @@ package Sistemas;
 
 public class Item_Usável extends Class_Item {
 	
-	int vida,vel;
+	private int vida,vel;
 	
 	public Item_Usável(String nome,int vida,int vel) {
 		
@@ -18,6 +18,15 @@ public class Item_Usável extends Class_Item {
 		
 	}
 	
+	public int getVida() {
+		
+		return this.vida;
+	}
+	
+	public int getVel() {
+		return this.vel;
+		
+	}
 	
 }
 
