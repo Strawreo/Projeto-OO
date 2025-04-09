@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class Inic_ItensJog {
 	
 public ArrayList<Class_Item> Inicializar_ItensJog(){
+	
+		System.out.println("Incializando itens jogáveis");
 		
 		ArrayList<Class_Item> ArrayItensJog = new ArrayList<>();
 		

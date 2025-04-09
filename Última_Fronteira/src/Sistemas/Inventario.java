@@ -43,14 +43,37 @@ public class Inventario {
 		
 	}
 	
-	public void descartar(Class_Item item) {
+	public void descartar(String nomeItem) {
 		
-		int id = inventario.indexOf(item);
-		inventario.remove(id);
-		inventario.set(id, null);
+		for (int i = 0; i < this.tamanho; i++) {
+			
+			boolean bool = true;
+			
+			if (nomeItem.equals(inventario.get(i).getNome())) {
+			
+				inventario.remove(i);
+				inventario.set(i, null);
+				
+				System.out.println("Item Descartado!!");
+				
+				bool = false;
+				
+				break;
+				
+			}
 		
-	
+		if (bool) {
+			
+			System.out.println("Entrada Inválida!");
+			break;
+		}
+			
+			
+		}
+		
 	}
+	
+				
 		
 	public void ler() {
 		
