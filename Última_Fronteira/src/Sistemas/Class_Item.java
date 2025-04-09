@@ -2,7 +2,7 @@ package Sistemas;
 
 public class Class_Item {
 
-	String nome;
+	private String nome;
 	
 	public Class_Item(String nome) //Estrutura básica de todos os itens 
 	
@@ -12,5 +12,10 @@ public class Class_Item {
 		System.out.println(nome);
 	}
 	
+	public String getNome() {
+		
+		return this.nome;
+		
+	}
 
 }
