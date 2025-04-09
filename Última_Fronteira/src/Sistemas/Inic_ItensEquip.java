@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class Inic_ItensEquip {
 	
 public ArrayList<Class_Item> Inicializar_ItensEquip(){
+	
+		System.out.println("Inicializando itens equipáveis");
 		
 		ArrayList<Class_Item> ArrayItensEquip = new ArrayList<>();
 		

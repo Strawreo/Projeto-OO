@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class Inic_ItensUsa {
 	
 public ArrayList<Class_Item> Inicializar_ItensUsa(){
+	
+		System.out.println("Inicializando itens usáveis");
 		
 		ArrayList<Class_Item> ArrayItensUsa = new ArrayList<>();
 		
