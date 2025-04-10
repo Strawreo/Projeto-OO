@@ -14,7 +14,7 @@ public class Treino {
 		/*
 		 * Aqui eu crio o rastreador Diego que se refere a classe rastreador
 		 */
-		Rastreador jogador = new Rastreador("Diego", 100, 0, 0, 100, 100, "Vazio", 22);
+		Rastreador jogador = new Rastreador("Diego", 100, 0, 0, 100, 100, "Vazio", 22,0,10);
 		GerenciadorDeEventos gerenciador = new GerenciadorDeEventos();
 		Ambiente ambienteAtual = new AmbienteFloresta();
 		

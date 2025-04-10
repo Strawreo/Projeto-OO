@@ -1,8 +1,7 @@
 package main; // Teste de Inventário : Eryck Emmanuel 
 import java.util.ArrayList;
-
 import takeTheWheel.InvTakeTheWheel;
-
+import poo.Personagem;
 import Sistemas.Class_Item;
 import Sistemas.Inic_ItensEquip;
 //import Sistemas.Inic_ItensJog;
@@ -22,7 +21,7 @@ public class Main_TESTE {
 		//ArrayList <Class_Item> ArrayItensUsa = ItensUsa.Inicializar_ItensUsa();
 		
 		Inventario Inv_Teste = new Inventario(10);
-		InvTakeTheWheel Inv = new InvTakeTheWheel(Inv_Teste);
+
 		
 		for (int i = 0; i < Inv_Teste.getTamanho(); i++) {
 			
@@ -30,7 +29,6 @@ public class Main_TESTE {
 			
 		}
 			
-		Inv.DisplayInventario();
 
 	}
 	
