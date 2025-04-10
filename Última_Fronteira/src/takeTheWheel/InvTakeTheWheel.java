@@ -1,15 +1,17 @@
 package takeTheWheel;
 import Sistemas.Inventario;
 import java.util.Scanner;
+import poo.Personagem;
 
 public class InvTakeTheWheel {
 	
 	private Scanner scanner = new Scanner(System.in);
-	
 	private Inventario inventario;
+	private Personagem personagem;
 	
-	public InvTakeTheWheel(Inventario inventario) {
+	public InvTakeTheWheel(Inventario inventario,Personagem personagem) {
 		this.inventario = inventario;
+		this.personagem = personagem;
 	}
 	
 	public void DisplayInventario() {
@@ -35,7 +37,10 @@ public class InvTakeTheWheel {
 		
 		else if (C.equals("Equipar") || C.equals("2")) {
 			
-			//Ainda não Implementado
+			System.out.println("Qual item deseja equipar?");
+			String item = this.scanner.nextLine();
+			
+			//Ainda não implementado
 			
 		}
 		else if (C.equals("Usar") || C.equals("3")) {

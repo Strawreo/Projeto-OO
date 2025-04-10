@@ -1,5 +1,7 @@
 package Sistemas;
 import java.util.ArrayList;
+import poo.Personagem;
+
 
 public class Inventario {
 	
@@ -69,6 +71,27 @@ public class Inventario {
 		}
 			
 			
+		}
+		
+	}
+	
+	public void Equipar(Class_Item item, Personagem personagem) 
+	
+	//Preciso que esse método receba uma String, que nem o descartar, para que o usuário tenha acesso a ele
+	//Ou eu posso fazer um loop for em InvTakeTheWheel que verifica todos os itens da ArrayList inventário, e verificando cada objeto 
+	
+	{
+		
+		if (item instanceof Item_Equipável) {
+			
+			int defesaItem = ((Item_Equipável) item).getDefesa();
+			int pesoItem = ((Item_Equipável) item).getPeso();
+			personagem.addToDefesa(defesaItem);
+			personagem.addToPeso(pesoItem);
+		}
+		else {
+			
+			System.out.println("Item não pode ser equipado!");
 		}
 		
 	}
