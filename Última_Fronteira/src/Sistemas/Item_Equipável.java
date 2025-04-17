@@ -1,4 +1,5 @@
 package Sistemas;
+import poo.Personagem;
 
 
 public class Item_Equipável extends Class_Item {
@@ -17,6 +18,18 @@ public class Item_Equipável extends Class_Item {
 		
 		
 	}
+	
+	public void equipar(Personagem personagem) {
+		if (this.getEquipado()) {
+			System.out.println("Item já equipado!");
+		}
+		else {
+			personagem.addToDefesa(this.getDefesa());
+			personagem.addToPeso(this.getPeso());
+		
+		}
+	}
+			
 	
 	
 	public boolean getEquipado() {

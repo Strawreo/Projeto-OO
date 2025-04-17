@@ -2,7 +2,6 @@ package Sistemas;
 import java.util.ArrayList;
 import poo.Personagem;
 
-
 public class Inventario {
 	
 	private int tamanho;
@@ -12,7 +11,7 @@ public class Inventario {
 	public Inventario(int tamanho)  {
 		
 		this.tamanho = tamanho;
-		this.inventario = new ArrayList<Class_Item>(this.tamanho); 
+		this.inventario = new ArrayList<Class_Item>(this.tamanho);
 		
 		for (int i = 0; i < this.tamanho; i++) {
 			
@@ -24,98 +23,99 @@ public class Inventario {
 			
 	public void obter(Class_Item item) {
 		
-		if (inventario.getLast() != null) {
-			
-			System.out.println("Inventário Cheio!!");
+		Boolean bool = true;
 		
-		} else {
-		
-			for (int i = 0; i < this.tamanho; i++) {
-				
-				if (inventario.get(i) == null) {
-					
-					inventario.set(i, item);
-					
-					break;
-				}
-				
-			}
+		for (int i = 0; i < inventario.size() ; i++) {
 			
+			if (inventario.get(i) == null) {
+				
+				this.inventario.set(i, item);
+				System.out.println("Obteve: " + item.getNome());
+				bool = false;
+				break;
+				
+			} 
 		}
 		
+		if(bool) {
+			
+			System.out.println("Tentou obter " + item.getNome() + ", mas o inventário estava cheio!!");
+		}
 	}
 	
 	public void descartar(String nomeItem) {
 		
-		for (int i = 0; i < this.tamanho; i++) {
-			
-			boolean bool = true;
-			
-			if (nomeItem.equals(inventario.get(i).getNome())) {
-			
-				inventario.remove(i);
-				inventario.set(i, null);
-				
-				System.out.println("Item Descartado!!");
-				
-				bool = false;
-				
-				break;
-				
-			}
+		ReadInventario read = this.read(nomeItem);
+		Boolean bool = read.getBool();
+		int i = read.getI();
 		
-		if (bool) {
+		if(bool){
 			
-			System.out.println("Entrada Inválida!");
-			break;
+			inventario.remove(i);
+			inventario.add(null);
+				
+			System.out.println("Item Descartado!!: " + nomeItem);
+				
+		} else {
+			System.out.println("Item não encontrado no inventário!");
 		}
-			
-			
-		}
-		
 	}
 	
-	public void Equipar(Class_Item item, Personagem personagem) 
-	
-	//Preciso que esse método receba uma String, que nem o descartar, para que o usuário tenha acesso a ele
-	//Ou eu posso fazer um loop for em InvTakeTheWheel que verifica todos os itens da ArrayList inventário, e verificando cada objeto 
-	
-	{
-		
-		if (item instanceof Item_Equipável) {
-			
-			int defesaItem = ((Item_Equipável) item).getDefesa();
-			int pesoItem = ((Item_Equipável) item).getPeso();
-			personagem.addToDefesa(defesaItem);
-			personagem.addToPeso(pesoItem);
-		}
-		else {
-			
-			System.out.println("Item não pode ser equipado!");
-		}
-		
-	}
-	
-				
 		
 	public void ler() {
 		
 		System.out.println("Inventário:");
 		
-		for (int i = 0; i < inventario.size() ; i++) {
+		for (int i = 0; i <inventario.size() ; i++) {
 			
 			int num = i + 1;
 			
 			if (inventario.get(i) != null) {
 				
-				System.out.println(num + ". " + inventario.get(i).getNome());
+				if (inventario.get(i) instanceof Item_Equipável) {
+					
+					if (((Item_Equipável)inventario.get(i)).getEquipado()) {
+						
+						System.out.println(num + ". " + inventario.get(i).getNome() + " Equipado!");
+					} else {
+						
+						System.out.println(num + ". " + inventario.get(i).getNome());
+						}
+						
+				} else {
+					
+					System.out.println(num + ". " + inventario.get(i).getNome());
+					
+					} 
 				
 			} else {
 				
-				System.out.println(num + ". " + "Slot Vazio");
-				
+				System.out.println(num + ". Slot Vazio");
+					
 			}
 				
+		}
+		
+	}
+	
+	public void equipar(String nome,Personagem personagem){
+		
+		ReadInventario read = this.read(nome);
+		Boolean bool = read.getBool();
+		int i = read.getI();
+		
+		if(bool) {
+			
+			if (inventario.get(i) instanceof Item_Equipável) {
+				
+				((Item_Equipável)inventario.get(i)).equipar(personagem);
+				System.out.println("Item Equipado!");
+				
+			} else {
+				
+				System.out.println("Item não equipável!");
+			}
+			
 		}
 		
 	}
@@ -125,5 +125,31 @@ public class Inventario {
 		return this.tamanho;
 	
 	}
+	
+	public ReadInventario read(String nome) {
+		
+		boolean bool = false;
+		int inteiro = -1;
+		
+		for (int i = 0; i < this.tamanho; i++) {
 			
+		if (nome.equals(inventario.get(i).getNome())) {
+		
+					bool = true;
+					inteiro = i;
+					break;
+				}
+			}
+		
+		if (inteiro != -1) {
+			
+			return new ReadInventario(bool,inteiro);
+			
+		}
+		else {
+			
+			System.out.println("Erro no Sistema read");
+			return new ReadInventario(false,0);
+		}
+	}
 }

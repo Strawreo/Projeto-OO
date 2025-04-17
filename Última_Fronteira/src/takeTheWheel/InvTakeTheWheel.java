@@ -17,6 +17,8 @@ public class InvTakeTheWheel {
 	public void DisplayInventario() {
 		
 		this.inventario.ler();
+		System.out.println("");
+		System.out.println("Opções: ");
 		System.out.println("1.Descartar");
 		System.out.println("2.Equipar");
 		System.out.println("3.Usar");
@@ -40,9 +42,12 @@ public class InvTakeTheWheel {
 			System.out.println("Qual item deseja equipar?");
 			String item = this.scanner.nextLine();
 			
-			//Ainda não implementado
+			this.inventario.equipar(item, personagem);
+			
+			this.DisplayInventario();
 			
 		}
+		
 		else if (C.equals("Usar") || C.equals("3")) {
 			
 			//Ainda não implementado
