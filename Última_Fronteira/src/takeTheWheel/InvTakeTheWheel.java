@@ -31,7 +31,7 @@ public class InvTakeTheWheel {
 			System.out.println("Qual item deseja descartar?");
 			String item = this.scanner.nextLine();
 			
-			this.inventario.descartar(item);
+			this.inventario.descartar(item, personagem);
 			
 			this.DisplayInventario();
 			
@@ -50,7 +50,12 @@ public class InvTakeTheWheel {
 		
 		else if (C.equals("Usar") || C.equals("3")) {
 			
-			//Ainda não implementado
+			System.out.println("Qual item deseja usar?");
+			String item = this.scanner.nextLine();
+			
+			this.inventario.usar(item, personagem);
+			
+			this.DisplayInventario();
 			
 		}
 		else if (C.equals("Sair do Inventário") || C.equals("4")) {

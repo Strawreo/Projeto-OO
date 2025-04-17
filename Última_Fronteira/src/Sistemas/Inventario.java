@@ -43,7 +43,7 @@ public class Inventario {
 		}
 	}
 	
-	public void descartar(String nomeItem) {
+	public void descartar(String nomeItem,Personagem personagem) {
 		
 		ReadInventario read = this.read(nomeItem);
 		Boolean bool = read.getBool();
@@ -51,10 +51,22 @@ public class Inventario {
 		
 		if(bool){
 			
+			if (inventario.get(i) instanceof Item_Equipável) {
+				if(((Item_Equipável)inventario.get(i)).getEquipado()) {
+					((Item_Equipável)inventario.get(i)).desequipar(personagem);
+					inventario.remove(i);
+					inventario.add(null);
+					System.out.println("Item desequipado e descartado!");
+				}
+			
+			} else {
+			
 			inventario.remove(i);
 			inventario.add(null);
 				
-			System.out.println("Item Descartado!!: " + nomeItem);
+			System.out.println("Item Descartado!!: " + nomeItem); 
+			
+			}
 				
 		} else {
 			System.out.println("Item não encontrado no inventário!");
@@ -66,7 +78,7 @@ public class Inventario {
 		
 		System.out.println("Inventário:");
 		
-		for (int i = 0; i <inventario.size() ; i++) {
+		for (int i = 0; i < inventario.size() ; i++) {
 			
 			int num = i + 1;
 			
@@ -76,7 +88,7 @@ public class Inventario {
 					
 					if (((Item_Equipável)inventario.get(i)).getEquipado()) {
 						
-						System.out.println(num + ". " + inventario.get(i).getNome() + " Equipado!");
+						System.out.println(num + ". " + inventario.get(i).getNome() + ": Equipado!");
 					} else {
 						
 						System.out.println(num + ". " + inventario.get(i).getNome());
@@ -120,10 +132,30 @@ public class Inventario {
 		
 	}
 	
-	public int getTamanho() {
+	public void usar(String nome,Personagem personagem) {
 		
-		return this.tamanho;
-	
+		ReadInventario read = this.read(nome);
+		Boolean bool = read.getBool();
+		int i = read.getI();
+		
+		if(bool) {
+			
+			if(inventario.get(i) instanceof Item_Usável) {
+				
+				((Item_Usável)inventario.get(i)).usar(personagem);
+				this.descartar(nome, personagem);
+				
+			} else {
+				
+				System.out.println("Item não pode ser usado!");
+			
+			}
+			
+		} else {
+			
+			System.out.println("Item não encontrado no inventário!!");
+		}
+		
 	}
 	
 	public ReadInventario read(String nome) {
@@ -148,8 +180,14 @@ public class Inventario {
 		}
 		else {
 			
-			System.out.println("Erro no Sistema read");
+			System.out.println("Entrada Inválida");
 			return new ReadInventario(false,0);
 		}
+	}
+	
+	public int getTamanho() {
+		
+		return this.tamanho;
+	
 	}
 }

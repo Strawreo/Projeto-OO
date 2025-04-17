@@ -24,10 +24,26 @@ public class Item_Equipável extends Class_Item {
 			System.out.println("Item já equipado!");
 		}
 		else {
+			
+			this.equipado = true;
 			personagem.addToDefesa(this.getDefesa());
 			personagem.addToPeso(this.getPeso());
 		
 		}
+	}
+	
+	public void desequipar(Personagem personagem) {
+		if (this.getEquipado()) {
+			
+			this.equipado = false;
+			personagem.takeFromDefesa(this.getDefesa());
+			personagem.takeFromPeso(this.getPeso());
+			
+			System.out.println("Item desequipado!");
+		} else {
+			System.out.println("Item já não está equipado!");
+		}
+		
 	}
 			
 	

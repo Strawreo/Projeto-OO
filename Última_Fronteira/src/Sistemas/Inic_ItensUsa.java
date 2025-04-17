@@ -10,18 +10,20 @@ public ArrayList<Class_Item> Inicializar_ItensUsa(){
 		
 		ArrayList<Class_Item> ArrayItensUsa = new ArrayList<>();
 		
-		ArrayItensUsa.add(new Item_Usável("Bandagens",10,0));
-		ArrayItensUsa.add(new Item_Usável("Template",0,0));
-		ArrayItensUsa.add(new Item_Usável("Template",0,0));
-		ArrayItensUsa.add(new Item_Usável("Template",0,0));
-		ArrayItensUsa.add(new Item_Usável("Template",0,0));
-		ArrayItensUsa.add(new Item_Usável("Template",0,0));
-		ArrayItensUsa.add(new Item_Usável("Template",0,0));
-		ArrayItensUsa.add(new Item_Usável("Template",0,0));
-		ArrayItensUsa.add(new Item_Usável("Template",0,0));
-		ArrayItensUsa.add(new Item_Usável("Template",0,0));
-		ArrayItensUsa.add(new Item_Usável("Template",0,0));
-		ArrayItensUsa.add(new Item_Usável("Template",0,0));
+		ArrayItensUsa.add(new Item_Usável("Bandagens",10,0,0,2,2)); //Organizado como: nome,vida,fome,sede,energia,sanidade
+		ArrayItensUsa.add(new Item_Usável("Template",0,0,0,0,0));
+		ArrayItensUsa.add(new Item_Usável("Template",0,0,0,0,0));
+		ArrayItensUsa.add(new Item_Usável("Template",0,0,0,0,0));
+		ArrayItensUsa.add(new Item_Usável("Template",0,0,0,0,0));
+		ArrayItensUsa.add(new Item_Usável("Template",0,0,0,0,0));
+		ArrayItensUsa.add(new Item_Usável("Template",0,0,0,0,0));
+		ArrayItensUsa.add(new Item_Usável("Template",0,0,0,0,0));
+		ArrayItensUsa.add(new Item_Usável("Template",0,0,0,0,0));
+		ArrayItensUsa.add(new Item_Usável("Template",0,0,0,0,0));
+		ArrayItensUsa.add(new Item_Usável("Template",0,0,0,0,0));
+		ArrayItensUsa.add(new Item_Usável("Template",0,0,0,0,0));
+		ArrayItensUsa.add(new Item_Usável("Template",0,0,0,0,0));
+		
 		
 		
 		
@@ -30,5 +32,5 @@ public ArrayList<Class_Item> Inicializar_ItensUsa(){
 		return ArrayItensUsa;
 		
 	}
-
+ 
 }

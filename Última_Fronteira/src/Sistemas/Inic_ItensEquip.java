@@ -10,7 +10,7 @@ public ArrayList<Class_Item> Inicializar_ItensEquip(){
 		
 		ArrayList<Class_Item> ArrayItensEquip = new ArrayList<>();
 		
-		ArrayItensEquip.add(new Item_Equipável("Capacete de madeira",2,3,false));
+		ArrayItensEquip.add(new Item_Equipável("Capacete de madeira",2,3,false)); //Organizado como: nome,defesa,peso, equipado
 		ArrayItensEquip.add(new Item_Equipável("Capacete de ferro",4,4,false));
 		ArrayItensEquip.add(new Item_Equipável("Capacete de bronze",5,4,false));
 		ArrayItensEquip.add(new Item_Equipável("Capacete de ouro",4,2,false));

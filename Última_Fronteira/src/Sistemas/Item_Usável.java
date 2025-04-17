@@ -1,20 +1,32 @@
 package Sistemas;
+import poo.Personagem;
 
 public class Item_Usável extends Class_Item {
 	
-	private int vida,vel;
+	private int vida,fome,sede,energia,sanidade;
 	
-	public Item_Usável(String nome,int vida,int vel) {
+	public Item_Usável(String nome,int vida,int fome,int sede,int energia,int sanidade) {
 		
 		super(nome);
 		
 		this.vida = vida;
-		this.vel = vel;
+		this.fome = fome;
+		this.sede = sede;
+		this.energia = energia;
+		this.sanidade = sanidade;
+		
 	}
 	
-	public void usar(int VidaAtual) {
+	public void usar(Personagem personagem) {
 		
-		VidaAtual += vida;
+		personagem.addToVida(this.vida);
+		personagem.addToFome(this.fome);
+		personagem.addToSede(this.sede);
+		personagem.addToEnergia(this.energia);
+		personagem.addToSanidade(this.sanidade);
+		
+		System.out.println(this.getNome() + " Usado!");
+		System.out.println(personagem.toString());
 		
 	}
 	
@@ -23,11 +35,23 @@ public class Item_Usável extends Class_Item {
 		return this.vida;
 	}
 	
-	public int getVel() {
-		return this.vel;
+	public int getFome() {
 		
+		return this.fome;
 	}
+
+	public int getSede() {
+		
+		return this.sede;
+	}
+	public int getEnergia() {
 	
+		return this.energia;
+	}
+	public int getSanidade() {
+	
+	return this.sanidade;
+	}
 }
 
 

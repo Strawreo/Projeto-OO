@@ -107,4 +107,38 @@ public abstract class Personagem {
 		 this.defesa += defesa;
 	}
 	 
+	 public void addToVida(int vida) {
+		 
+		 this.vida += vida;
+	 }
+	 
+	 public void addToSede(int sede) {
+		 
+		 this.sede += sede;
+	 }
+	 
+	 public void addToFome(int fome) {
+		 
+		 this.fome += fome;
+	 }
+	 
+	 public void addToSanidade(int sanidade) {
+		 
+		 this.sanidade += sanidade;
+	 }
+	 
+	 public void addToEnergia(int energia) {
+		 
+		 this.energia += energia;
+	 }
+	 
+	 public void takeFromDefesa(int defesa) {
+		 this.defesa -= defesa;
+	 }
+	 
+	 public void takeFromPeso(int peso) {
+		 this.peso -= peso;
+	 }
+		 
+	 
 }
