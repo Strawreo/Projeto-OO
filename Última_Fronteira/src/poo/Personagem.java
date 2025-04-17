@@ -16,8 +16,11 @@ public abstract class Personagem {
 	private String inventário;
 	private int localização;
 	
+	private int peso;
+	private int defesa;
 	
-	 Personagem(String nome, int vida, int fome, int sede, int energia, int sanidade, String inventário, int localização) {
+	
+	 Personagem(String nome, int vida, int fome, int sede, int energia, int sanidade, String inventário, int localização,int peso,int defesa) {
 		//Aqui tem o Construtor do personagem com todos os atributos
 		
 		
@@ -29,6 +32,10 @@ public abstract class Personagem {
 		this.sanidade = sanidade;
 		this.inventário = inventário;
 		this.localização = localização;
+		
+		this.peso = peso;
+		this.defesa = defesa;
+		
 	}
 	 
 	 //Aqui eu crio o método toString para retornar todos os parametros da classe Super
@@ -69,7 +76,69 @@ public abstract class Personagem {
 	 public int getFome() {
 		 return this.fome;
 	 }
-
 	 
+	 public int getPeso() {
+		 
+		 return this.peso;
+	 }
+	 
+	 public int getDefesa() {
+		 
+		 return this.defesa;
+	 }
+	 
+	 public void setPeso(int peso) {
+		 
+		 this.peso = peso;
+	 }
+	 
+	 public void setDefesa(int defesa) {
+		 
+		 this.defesa = defesa;
+	 }
+	 
+	 public void addToPeso(int peso) {
+		 
+		 this.peso += peso;
+	}
+	 
+	 public void addToDefesa (int defesa) {
+		 
+		 this.defesa += defesa;
+	}
+	 
+	 public void addToVida(int vida) {
+		 
+		 this.vida += vida;
+	 }
+	 
+	 public void addToSede(int sede) {
+		 
+		 this.sede += sede;
+	 }
+	 
+	 public void addToFome(int fome) {
+		 
+		 this.fome += fome;
+	 }
+	 
+	 public void addToSanidade(int sanidade) {
+		 
+		 this.sanidade += sanidade;
+	 }
+	 
+	 public void addToEnergia(int energia) {
+		 
+		 this.energia += energia;
+	 }
+	 
+	 public void takeFromDefesa(int defesa) {
+		 this.defesa -= defesa;
+	 }
+	 
+	 public void takeFromPeso(int peso) {
+		 this.peso -= peso;
+	 }
+		 
 	 
 }
