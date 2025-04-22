@@ -61,6 +61,7 @@ public class InvTakeTheWheel {
 		else if (C.equals("Sair do Inventário") || C.equals("4")) {
 			
 			System.out.println("Saindo do Inventário");
+			System.out.println("Prosseguindo ao próximo turno!");
 			return;
 			
 		}

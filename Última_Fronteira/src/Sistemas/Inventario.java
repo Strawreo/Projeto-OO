@@ -170,8 +170,11 @@ public class Inventario {
 					bool = true;
 					inteiro = i;
 					break;
+				} else {
+					
+					System.out.println("Entrada Inválida!");
 				}
-			}
+			} 
 		
 		if (inteiro != -1) {
 			

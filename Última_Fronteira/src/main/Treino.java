@@ -6,7 +6,11 @@ import poo.AmbienteFloresta;
 import poo.Evento;
 import poo.GerenciadorDeEventos;
 import poo.Rastreador;
+import takeTheWheel.InvTakeTheWheel;
 import poo.Médico;
+import java.util.Scanner;
+
+import Sistemas.Inventario;
 
 public class Treino {
 
@@ -18,6 +22,9 @@ public class Treino {
 		Rastreador jogador = new Rastreador("Diego", 100, 0, 0, 100, 100, "Vazio", 22,0,10);
 		GerenciadorDeEventos gerenciador = new GerenciadorDeEventos();
 		Ambiente ambienteAtual = new AmbienteFloresta();
+		Scanner scanner = new Scanner(System.in);
+		Inventario Inv_Teste = new Inventario(10);
+		InvTakeTheWheel Display = new InvTakeTheWheel(Inv_Teste,jogador);
 		
 		
 		// contador de rodadas
@@ -28,7 +35,21 @@ public class Treino {
 	
 	        Evento eventoSorteado = gerenciador.sortearEvento(ambienteAtual);
 	        gerenciador.aplicarEvento(jogador, eventoSorteado);
-	            
+	        
+	        System.out.println("Deseja abrir o inventário?");
+	        System.out.println("Y/N");
+	        
+	        String resposta = scanner.nextLine();
+	        
+	        if (resposta.equals("Y")) {
+	        	
+	        	Display.DisplayInventario();
+	        } 
+	        else if (resposta.equals("N")) {
+	        	
+	        	System.out.println("Prosseguindo ao próximo turno!");
+	     
+	        }
 	    
 	        // Simulação de mudança de ambiente
 	        if (rodada == 3) { // Depois de 3 rodadas, muda o ambiente
