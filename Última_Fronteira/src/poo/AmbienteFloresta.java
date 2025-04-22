@@ -5,10 +5,16 @@ import java.util.List;
 
 public class AmbienteFloresta implements Ambiente {
 	private List<Evento> eventos;
+	private final String nome = "Floresta";
 	
 	public AmbienteFloresta() {
 		this.eventos = eventosPossiveis();
 	
+	}
+	
+	@Override
+	public String getNome() {
+		return nome;
 	}
 
 	@Override
