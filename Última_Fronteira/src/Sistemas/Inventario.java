@@ -128,6 +128,9 @@ public class Inventario {
 				System.out.println("Item não equipável!");
 			}
 			
+		} else {
+			
+			System.out.println("Item não encontrado no inventário!");
 		}
 		
 	}
@@ -163,18 +166,23 @@ public class Inventario {
 		boolean bool = false;
 		int inteiro = -1;
 		
-		for (int i = 0; i < this.tamanho; i++) {
+		if (nome.equals(null)) {
 			
-		if (nome.equals(inventario.get(i).getNome())) {
+			for (int i = 0; i < this.tamanho; i++) {
+				
+				if (nome.equals(inventario.get(i).getNome())) {
+				
+							bool = true;
+							inteiro = i;
+							break;
+						} 
+					} 
+		} else {
+			
+			System.out.println("Entrada Inválida");
+		}
 		
-					bool = true;
-					inteiro = i;
-					break;
-				} else {
-					
-					System.out.println("Entrada Inválida!");
-				}
-			} 
+		
 		
 		if (inteiro != -1) {
 			
@@ -183,7 +191,6 @@ public class Inventario {
 		}
 		else {
 			
-			System.out.println("Entrada Inválida");
 			return new ReadInventario(false,0);
 		}
 	}
