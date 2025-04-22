@@ -15,6 +15,7 @@ public abstract class Personagem {
 	private int sanidade;
 	private String inventário;
 	private int localização;
+	
 	private int peso;
 	private int defesa;
 	
@@ -31,6 +32,7 @@ public abstract class Personagem {
 		this.sanidade = sanidade;
 		this.inventário = inventário;
 		this.localização = localização;
+		
 		this.peso = peso;
 		this.defesa = defesa;
 		
@@ -51,53 +53,28 @@ public abstract class Personagem {
 	 public void sentirFome(int dano) {
 			System.out.println("Sentindo fome...");
 			this.fome += dano;
-			if(this.fome >= 40 && this.vida > 0) {
+			if(this.fome >= 40) {
 				this.vida-= 2;
 			}
 			System.out.println("Vida atual é " + vida);
 			System.out.println("Fome atual é " + fome);
 			
 		}
-	 public void sentirSede(int dano) {
+	 public void sentirSede() {
 		 System.out.println("Sentindo sede...");
-		 this.sede += dano;
-		 if(sede >= 40 && this.vida > 0) {
-			 this.vida -=2;
+		 sede += 20;
+		 if(sede >= 40) {
+			 vida -=2;
+		 }else {
+			 
 		 }
 		 System.out.println("A vida atual é " + vida);
 		 System.out.println("A sede atual é " + sede);
 		 
 	 }
-	  public void perderEnergia(int dano) {
-			this.energia -= dano;
-			if (this.energia < 0)this.energia = 0;
-			System.out.println(nome + " agora tem " + energia + " de energia.\n");
-	 }
-	 public void perderSanidade(int dano) {
-			this.sanidade -= dano;
-			if (this.sanidade < 0)this.sanidade = 0;
-			System.out.println(nome + " agora tem " + sanidade + " de sanidade.\n");
-		}
-	 
-	 
-	 public int getVida() {
-		 return this.vida;
-	 }
 	 
 	 public int getFome() {
 		 return this.fome;
-	 }
-	 
-	 public int getSede() {
-		 return this.sede;
-	 }
-	 
-	 public int getEnergia() {
-		 return this.energia;
-	 }
-	 
-	 public int getSanidade() {
-		 return this.sanidade;
 	 }
 	 
 	 public int getPeso() {

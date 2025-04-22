@@ -7,5 +7,8 @@ public class Médico extends Personagem{
 	}
 	
 	
-	
+	public String toString() {
+		return super.toString();
+		
+	}
 }
