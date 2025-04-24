@@ -15,7 +15,13 @@ public class GerenciadorDeEventos {
 	}
 	public void aplicarEvento(Personagem jogador, Evento evento) {
         if (evento != null) {
-            evento.executar(jogador); 
+        	
+        	if (evento instanceof EventoItemFloresta) {
+        		System.out.println("Evento de Item encontrado!"); //debugging
+        		((EventoItemFloresta)evento).executar(jogador);
+        		
+        	} else {
+            evento.executar(jogador); }
         }
     }
 
