@@ -15,10 +15,28 @@ public class AmbienteFloresta implements Ambiente {
 	private ArrayList<Class_Item> ItensJog = new Inic_ItensJog().Inicializar_ItensJog();
 	
 	public AmbienteFloresta(Inventario inventario) {
-		this.eventos = eventosPossiveis();
 		this.inventario = inventario;
+		this.eventos = eventosPossiveis();
+	}
+	
+	public ArrayList<Evento> eventosPossiveis() {
+		ArrayList<Evento> eventosPossiveisFloresta = new ArrayList<Evento>();
+		eventosPossiveisFloresta.add(new EventoAtaqueDeUrso());
+		eventosPossiveisFloresta.add(new EventoClimático());
+		eventosPossiveisFloresta.add(new EventoItemFloresta(this.inventario,this.ItensUsa,this.ItensEquip,this.ItensJog));
+		
+		if (this.inventario == null) {
+			
+			System.out.println("Inventario nulo");
+			
+		} else {
+			
+			this.inventario.ler(); //debugging
+		
+		}
 		
 		
+		return eventosPossiveisFloresta;
 	}
 	
 	@Override
@@ -31,16 +49,7 @@ public class AmbienteFloresta implements Ambiente {
 		return new ArrayList<>(eventos);
 	}
 	
-	public ArrayList<Evento> eventosPossiveis() {
-		ArrayList<Evento> eventosPossiveisFloresta = new ArrayList<Evento>();
-		eventosPossiveisFloresta.add(new EventoAtaqueDeUrso());
-		eventosPossiveisFloresta.add(new EventoClimático());
-		eventosPossiveisFloresta.add(new EventoItemFloresta(this.inventario,this.ItensUsa,this.ItensEquip,this.ItensJog));
-		
-		this.getinventario().ler(); //debugging
-		
-		return eventosPossiveisFloresta;
-	}
+
 	
 	public Inventario getinventario() {
 		

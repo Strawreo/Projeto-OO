@@ -19,22 +19,15 @@ public class Treino {
 		 * Aqui eu crio o rastreador Diego que se refere a classe rastreador
 		 */
 		Inventario Inv_Teste = new Inventario(10);
-		Inv_Teste.obter(new Item_Equipável("óculos de teste",1000,1,true));
-		
-		System.out.println("Instanciando o inventario teste: "); //debugging
-		Inv_Teste.ler();
 		
 		Rastreador jogador = new Rastreador("Diego", 100, 0, 0, 100, 100, "Vazio", 22,0,10);
 		GerenciadorDeEventos gerenciador = new GerenciadorDeEventos();
 		
-		System.out.println("Instanciando o Ambiente Floresta: ");//debugging
 		Ambiente ambienteAtual = new AmbienteFloresta(Inv_Teste);
 		
 		Scanner scanner = new Scanner(System.in);
 		InvTakeTheWheel Display = new InvTakeTheWheel(((AmbienteFloresta)ambienteAtual).getinventario(),jogador);
-		
-		System.out.println("Verificando o Inventário após té-lo colocado no construtor de TakeTheWheel");//debugging
-		((AmbienteFloresta)ambienteAtual).getinventario().ler();
+	
 		
 		// contador de rodadas
 		int rodada = 1;
