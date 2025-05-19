@@ -6,12 +6,12 @@ public class Inventario {
 	
 	private int tamanho;
 	
-	private ArrayList<Class_Item> inventario; 
+	private ArrayList<ClassItem> inventario; 
 	
 	public Inventario(int tamanho)  {
 		
 		this.tamanho = tamanho;
-		this.inventario = new ArrayList<Class_Item>(this.tamanho);
+		this.inventario = new ArrayList<ClassItem>(this.tamanho);
 		
 		for (int i = 0; i < this.tamanho; i++) {
 			
@@ -21,7 +21,7 @@ public class Inventario {
 		
 	}
 			
-	public void obter(Class_Item item) {
+	public void obter(ClassItem item) {
 		
 		Boolean bool = true;
 		
@@ -161,12 +161,34 @@ public class Inventario {
 		
 	}
 	
+	public void inspecionar(String nome) {
+		
+		ReadInventario read = this.read(nome);
+		Boolean bool = read.getBool();
+		int i = read.getI();
+		
+		if (bool) {
+			
+			System.out.println(this.inventario.get(i).getDescricao());
+		
+		} else {
+			
+			System.out.println("Item não encontrado no inventário!!");
+		}
+		
+		
+	}
+	
 	public ReadInventario read(String nome) {
 		
 		boolean bool = false;
 		int inteiro = -1;
 		
 		if (nome.equals(null)) {
+			
+			System.out.println("Entrada Inválida");
+			
+		} else {
 			
 			for (int i = 0; i < this.tamanho; i++) {
 				
@@ -175,21 +197,15 @@ public class Inventario {
 							bool = true;
 							inteiro = i;
 							break;
-						} 
 					} 
-		} else {
-			
-			System.out.println("Entrada Inválida");
+				} 
 		}
-		
-		
 		
 		if (inteiro != -1) {
 			
 			return new ReadInventario(bool,inteiro);
 			
-		}
-		else {
+		} else {
 			
 			return new ReadInventario(false,0);
 		}

@@ -1,13 +1,13 @@
 package Sistemas;
 import poo.Personagem;
 
-public class Item_Usável extends Class_Item {
+public class Item_Usável extends ClassItem {
 	
 	private int vida,fome,sede,energia,sanidade;
 	
-	public Item_Usável(String nome,int vida,int fome,int sede,int energia,int sanidade) {
+	public Item_Usável(String nome,String descricao,int vida,int fome,int sede,int energia,int sanidade,double peso) {
 		
-		super(nome);
+		super(nome,descricao,peso);
 		
 		this.vida = vida;
 		this.fome = fome;
