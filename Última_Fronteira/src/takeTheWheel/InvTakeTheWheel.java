@@ -22,9 +22,7 @@ public class InvTakeTheWheel {
 		System.out.println("1.Descartar");
 		System.out.println("2.Equipar");
 		System.out.println("3.Usar");
-		System.out.println("4.Inspecionar");
-		System.out.println("5.Criar");
-		System.out.println("6.Sair do Inventário");
+		System.out.println("4.Sair do Inventário");
 		
 		String C = this.scanner.nextLine();
 		
@@ -60,30 +58,7 @@ public class InvTakeTheWheel {
 			this.DisplayInventario();
 			
 		}
-		
-		else if (C.equals("Inspecionar") || C.equals("4")) {
-			
-			System.out.println("Qual item deseja inspecionar?");
-			String item = this.scanner.nextLine();
-			
-			this.inventario.inspecionar(item);
-			
-			this.DisplayInventario();
-		}
-		
-		else if (C.equals("Criar") || C.equals("5")) {
-			
-			System.out.println("Quais itens você deseja combinar?");
-			System.out.println("Item 1: ");
-			String item1 = this.scanner.nextLine();
-			System.out.println("Item 2: ");
-			String item2 = this.scanner.nextLine(); // ainda deve ser implementado!!
-			
-			this.DisplayInventario();
-			
-		}
-		
-		else if (C.equals("Sair do Inventário") || C.equals("6")) {
+		else if (C.equals("Sair do Inventário") || C.equals("4")) {
 			
 			System.out.println("Saindo do Inventário");
 			System.out.println("Prosseguindo ao próximo turno!");

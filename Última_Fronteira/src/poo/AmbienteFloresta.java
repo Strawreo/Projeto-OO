@@ -10,13 +10,13 @@ public class AmbienteFloresta implements Ambiente {
 	private Inventario inventario;
 	
 	
-	private ArrayList<ClassItem> ItensUsa = new Inic_ItensUsa().Inicializar_ItensUsa();
-	private ArrayList<ClassItem> ItensEquip = new Inic_ItensEquip().Inicializar_ItensEquip();
-	private ArrayList<ClassItem> ItensJog = new Inic_ItensJog().Inicializar_ItensJog();
+	private ArrayList<Class_Item> ItensUsa = new Inic_ItensUsa().Inicializar_ItensUsa();
+	private ArrayList<Class_Item> ItensEquip = new Inic_ItensEquip().Inicializar_ItensEquip();
+	private ArrayList<Class_Item> ItensJog = new Inic_ItensJog().Inicializar_ItensJog();
 	
 	public AmbienteFloresta(Inventario inventario) {
 		this.inventario = inventario;
-		this.eventos = this.eventosPossiveis();
+		this.eventos = eventosPossiveis();
 	}
 	
 	public ArrayList<Evento> eventosPossiveis() {

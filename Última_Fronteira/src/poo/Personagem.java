@@ -15,11 +15,11 @@ public abstract class Personagem {
 	private int sanidade;
 	private String inventário;
 	private int localização;
-	private double peso;
+	private int peso;
 	private int defesa;
 	
 	
-	 Personagem(String nome, int vida, int fome, int sede, int energia, int sanidade, String inventário, int localização,double peso,int defesa) {
+	 Personagem(String nome, int vida, int fome, int sede, int energia, int sanidade, String inventário, int localização,int peso,int defesa) {
 		//Aqui tem o Construtor do personagem com todos os atributos
 		
 		
@@ -100,7 +100,7 @@ public abstract class Personagem {
 		 return this.sanidade;
 	 }
 	 
-	 public double getPeso() {
+	 public int getPeso() {
 		 
 		 return this.peso;
 	 }
@@ -120,7 +120,7 @@ public abstract class Personagem {
 		 this.defesa = defesa;
 	 }
 	 
-	 public void addToPeso(double peso) {
+	 public void addToPeso(int peso) {
 		 
 		 this.peso += peso;
 	}
@@ -159,7 +159,7 @@ public abstract class Personagem {
 		 this.defesa -= defesa;
 	 }
 	 
-	 public void takeFromPeso(double peso) {
+	 public void takeFromPeso(int peso) {
 		 this.peso -= peso;
 	 }
 		 

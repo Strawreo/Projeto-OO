@@ -1,12 +1,12 @@
 package Sistemas;
 
-public class Item_Jogável extends ClassItem {
+public class Item_Jogável extends Class_Item {
 	
 	private int dano;
 	
-	public Item_Jogável(String nome,String descricao,int dano) {
+	public Item_Jogável(String nome,int dano) {
 		
-		super(nome,descricao,0.5);
+		super(nome);
 		
 		this.dano = dano;
 	}

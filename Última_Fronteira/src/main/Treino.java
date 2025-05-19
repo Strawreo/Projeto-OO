@@ -36,12 +36,7 @@ public class Treino {
 	        System.out.println("\nRodada " + rodada + " no ambiente: " + ambienteAtual.getNome());
 	
 	        Evento eventoSorteado = gerenciador.sortearEvento(ambienteAtual);
-	        gerenciador.aplicarEvento(jogador, eventoSorteado);
-	        
-	        if(jogador.getVida() == 0) {
-	        	
-	        	break;
-	        } else {
+	        gerenciador.aplicarEvento(jogador, eventoSorteado, Display);
 	        
 	        System.out.println("Deseja abrir o inventário?");
 	        System.out.println("Y/N");
@@ -63,8 +58,7 @@ public class Treino {
 	            ambienteAtual = new AmbienteDeserto();
 	            System.out.println("\n>> O jogador chegou ao deserto! <<");
 	        }
-	        
-	        rodada++;}
+	        rodada++;
 	        
 		}
 		
