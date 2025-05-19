@@ -1,7 +1,5 @@
 package poo;
 import Sistemas.*;
-import takeTheWheel.InvTakeTheWheel;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -9,10 +7,10 @@ import java.util.Random;
 public class EventoItemFloresta implements Evento {
 	
 	private Inventario inventario;
-	private ArrayList<Class_Item> ArrayUsa,ArrayEquip,ArrayJog;
+	private ArrayList<ClassItem> ArrayUsa,ArrayEquip,ArrayJog;
 	
 	
-	public EventoItemFloresta(Inventario inventario, ArrayList<Class_Item> ArrayUsa,ArrayList<Class_Item> ArrayEquip,ArrayList<Class_Item> ArrayJog) {
+	public EventoItemFloresta(Inventario inventario, ArrayList<ClassItem> ArrayUsa,ArrayList<ClassItem> ArrayEquip,ArrayList<ClassItem> ArrayJog) {
 		
 		this.inventario = inventario;
 		this.ArrayEquip = ArrayEquip;
@@ -23,7 +21,7 @@ public class EventoItemFloresta implements Evento {
 	}
 	
 	@Override
-	public void executar(Personagem jogador, InvTakeTheWheel Inv) {
+	public void executar(Personagem jogador) {
 		
 		Random random = new Random();
 		int num = random.nextInt(1, 3);

@@ -1,11 +1,9 @@
 package poo;
 
-import takeTheWheel.InvTakeTheWheel;
-
 public class EventoTempestadeDeAreia implements Evento{
 	
 	@Override
-	public void executar(Personagem jogador, InvTakeTheWheel Inv) {
+	public void executar(Personagem jogador) {
 		System.out.println("Você está em uma tempestade de areia!");
 		jogador.perderVida(8);
 		jogador.perderSanidade(20);

@@ -1,9 +1,8 @@
 package poo;
-import takeTheWheel.*;
 
 public interface Evento {
 	
-	void executar(Personagem jogador, InvTakeTheWheel Inv);
+	void executar(Personagem jogador);
 	
 	default void teste(){
 		
