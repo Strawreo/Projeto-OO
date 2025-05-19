@@ -1,5 +1,7 @@
 package poo;
 import Sistemas.*;
+import takeTheWheel.InvTakeTheWheel;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -21,7 +23,7 @@ public class EventoItemFloresta implements Evento {
 	}
 	
 	@Override
-	public void executar(Personagem jogador) {
+	public void executar(Personagem jogador, InvTakeTheWheel Inv) {
 		
 		Random random = new Random();
 		int num = random.nextInt(1, 3);

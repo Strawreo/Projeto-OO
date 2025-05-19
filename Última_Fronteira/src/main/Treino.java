@@ -36,7 +36,7 @@ public class Treino {
 	        System.out.println("\nRodada " + rodada + " no ambiente: " + ambienteAtual.getNome());
 	
 	        Evento eventoSorteado = gerenciador.sortearEvento(ambienteAtual);
-	        gerenciador.aplicarEvento(jogador, eventoSorteado);
+	        gerenciador.aplicarEvento(jogador, eventoSorteado, Display);
 	        
 	        System.out.println("Deseja abrir o inventário?");
 	        System.out.println("Y/N");

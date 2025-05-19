@@ -1,6 +1,7 @@
 package poo;
 
 import java.util.List;
+import takeTheWheel.*;
 import java.util.Random;
 
 public class GerenciadorDeEventos {
@@ -13,15 +14,15 @@ public class GerenciadorDeEventos {
         Random random = new Random();
         return eventos.get(random.nextInt(eventos.size())); 
 	}
-	public void aplicarEvento(Personagem jogador, Evento evento) {
+	public void aplicarEvento(Personagem jogador, Evento evento, InvTakeTheWheel Inv) {
         if (evento != null) {
         	
         	if (evento instanceof EventoItemFloresta) {
         		System.out.println("Evento de Item encontrado!"); //debugging
-        		((EventoItemFloresta)evento).executar(jogador);
+        		((EventoItemFloresta)evento).executar(jogador, Inv);
         		
         	} else {
-            evento.executar(jogador); }
+            evento.executar(jogador, Inv); }
         }
     }
 
