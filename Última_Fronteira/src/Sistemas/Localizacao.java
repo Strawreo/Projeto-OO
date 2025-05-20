@@ -1,9 +1,9 @@
 package Sistemas;
-import poo.*;
-import java.util.Random;
+/*import poo.*;
+import java.util.Random;*/
 
 public class Localizacao {
-	private int rodada;
+	/*private int rodada;
 	private GerenciadorDeEventos gerenciador;
 	private Random random;
 	private Ambiente ambiente;
@@ -19,7 +19,7 @@ public class Localizacao {
 	public void findLocalizacao() {
 		
 		
-	}
+	}*/
 	
 
 }

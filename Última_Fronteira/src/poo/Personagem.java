@@ -1,6 +1,7 @@
 package poo;
+import Sistemas.*;
 
-public abstract class Personagem {
+public class Personagem {
 	
 	/*
 	 * Criação da classe principal personagem que vai se derivar as classes de cada
@@ -13,15 +14,15 @@ public abstract class Personagem {
 	private int sede;
 	private int energia;
 	private int sanidade;
-	private String inventário;
-	private int localização;
+	private int tamanhoInventario;
+	private Inventario inventário;
 	private double peso;
 	private int defesa;
+	private String descricao;
 	
 	
-	 Personagem(String nome, int vida, int fome, int sede, int energia, int sanidade, String inventário, int localização,double peso,int defesa) {
+	 public Personagem(String nome,String descricao, int vida, int fome, int sede, int energia, int sanidade, int tamanhoInventario,double peso,int defesa) {
 		//Aqui tem o Construtor do personagem com todos os atributos
-		
 		
 		this.nome = nome;
 		this.vida = vida;
@@ -29,10 +30,11 @@ public abstract class Personagem {
 		this.sede = sede;
 		this.energia = energia;
 		this.sanidade = sanidade;
-		this.inventário = inventário;
-		this.localização = localização;
+		this.tamanhoInventario = tamanhoInventario;
+		this.inventário = new Inventario(tamanhoInventario);
 		this.peso = peso;
 		this.defesa = defesa;
+		this.setDescricao(descricao);
 		
 	}
 	 
@@ -40,7 +42,8 @@ public abstract class Personagem {
 	 //e assim eu só chamar o metodo nas classes filho para printar os stats da classe
 	 
 	 public String toString() {
-			return this.nome + "\n" + this.vida + "\n" + this.fome + "\n" + this.sede + "\n" + this.energia + "\n" + this.sanidade + "\n" + this.inventário + "\n" + this.localização + "\n";
+			return "Vida: " + this.vida + "\n" + "Fome: " + this.fome + "\n" + "Sede: " + this.sede + "\n" + 
+					"Energia: " + this.energia + "\n" + "Sanidade: " + this.sanidade + "\n" + "Tamanho do inventário: " + this.tamanhoInventario + "\n";
 			
 		}
 	 public void perderVida(int dano) {
@@ -162,6 +165,20 @@ public abstract class Personagem {
 	 public void takeFromPeso(double peso) {
 		 this.peso -= peso;
 	 }
-		 
 	 
+	 public Inventario getInventario() {
+		 return this.inventário;
+	 }
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	 
+	public String getNome() {
+		return this.nome;
+	}
 }

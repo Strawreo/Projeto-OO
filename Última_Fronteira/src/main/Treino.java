@@ -5,28 +5,28 @@ import poo.AmbienteDeserto;
 import poo.AmbienteFloresta;
 import poo.Evento;
 import poo.GerenciadorDeEventos;
-import poo.Rastreador;
-import takeTheWheel.InvTakeTheWheel;
+import poo.Personagem;
+import takeTheWheel.*;
 import java.util.Scanner;
-import Sistemas.*;
+//import Sistemas.*;
 
 
 public class Treino {
 
 	public static void main(String[] args) {
-
-		/*
-		 * Aqui eu crio o rastreador Diego que se refere a classe rastreador
-		 */
-		Inventario Inv_Teste = new Inventario(10);
 		
-		Rastreador jogador = new Rastreador("Diego", 100, 0, 0, 100, 100, "Vazio", 22,0,10);
+		PersonagemTakeTheWheel escolha = new PersonagemTakeTheWheel();
+		Personagem jogador = escolha.escolha();
+		
 		GerenciadorDeEventos gerenciador = new GerenciadorDeEventos();
 		
-		Ambiente ambienteAtual = new AmbienteFloresta(Inv_Teste);
+		Ambiente ambienteAtual = new AmbienteFloresta(jogador.getInventario());
+		
+		System.out.println(jogador.toString());
+		System.out.println(jogador.getDescricao());
 		
 		Scanner scanner = new Scanner(System.in);
-		InvTakeTheWheel Display = new InvTakeTheWheel(((AmbienteFloresta)ambienteAtual).getinventario(),jogador);
+		InvTakeTheWheel Display = new InvTakeTheWheel(jogador.getInventario(),jogador);
 	
 		
 		// contador de rodadas
@@ -55,7 +55,7 @@ public class Treino {
 	    
 	        // Simulação de mudança de ambiente
 	        if (rodada == 10) { // Depois de 10 rodadas, muda o ambiente
-	            ambienteAtual = new AmbienteDeserto();
+	            ambienteAtual = new AmbienteDeserto(Display.getInventario());
 	            System.out.println("\n>> O jogador chegou ao deserto! <<");
 	        }
 	        rodada++;

@@ -73,13 +73,13 @@ public class InvTakeTheWheel {
 		
 		else if (C.equals("Criar") || C.equals("5")) {
 			
-			System.out.println("Quais itens você deseja combinar?");
+			/*System.out.println("Quais itens você deseja combinar?");
 			System.out.println("Item 1: ");
 			String item1 = this.scanner.nextLine();
 			System.out.println("Item 2: ");
 			String item2 = this.scanner.nextLine(); // ainda deve ser implementado!!
 			
-			this.DisplayInventario();
+			this.DisplayInventario();*/
 			
 		}
 		
@@ -96,5 +96,9 @@ public class InvTakeTheWheel {
 			System.out.println("Entrada Inválida!");
 			this.DisplayInventario();
 		}
+	}
+	
+	public Inventario getInventario() {
+		return this.inventario;
 	}
 }
