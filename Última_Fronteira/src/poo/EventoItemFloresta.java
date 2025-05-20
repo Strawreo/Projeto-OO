@@ -40,11 +40,10 @@ public class EventoItemFloresta extends Evento {
 		int num = random.nextInt(1, 3);
 		
 		if (num == 1) {
-			
-			int i = random.nextInt(0,3);
-			this.inventario.obter(ArrayEquip.get(i),jogador);
-			
-			
+			int i = random.nextInt(0,22);
+			this.inventario.obter(new Item_Equipável(ArrayEquip.get(i).getNome(),ArrayEquip.get(i).getDescricao(),
+									((Item_Equipável)ArrayEquip.get(i)).getDefesa(),ArrayEquip.get(i).getPeso(),
+									((Item_Equipável)ArrayEquip.get(i)).getDano(),false),jogador);
 		}
 		else if(num == 2) {
 			
