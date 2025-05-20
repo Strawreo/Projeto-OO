@@ -1,6 +1,5 @@
 package Sistemas;
 import java.util.ArrayList;
-
 import equip.*;
 import personagens.Personagem;
 
@@ -198,7 +197,11 @@ public class Inventario {
     					ReadInventario read1 = this.readEquip(ItemEquipavelMao.class);
     					System.out.println("Item de mao"); //debugg
     					if (read1.getBool()) {
-    						System.out.println("Você já tem: " + inventario.get(read1.getI()).getNome() + "Equipado na sua mão!"); 						
+    						System.out.println("Você já tem: " + inventario.get(read1.getI()).getNome() + " equipado na sua mão!"); 	
+    						System.out.println("Desequipando " + inventario.get(read1.getI()).getNome() + " e equipando " + inventario.get(i).getNome());
+    						
+    						((Item_Equipável)inventario.get(read1.getI())).desequipar(personagem);
+    						((Item_Equipável)inventario.get(i)).equipar(personagem);
     					} else {
     						((Item_Equipável)inventario.get(i)).equipar(personagem);
     					}
@@ -206,7 +209,11 @@ public class Inventario {
     					System.out.println("Item de cabeca"); //debugg
     					ReadInventario read1 = this.readEquip(ItemEquipavelCabeca.class);
     					if (read1.getBool()) {
-    						System.out.println("Você já tem: " + inventario.get(read1.getI()).getNome() + "Equipado na sua cabeça!");
+    						System.out.println("Você já tem: " + inventario.get(read1.getI()).getNome() + " equipado na sua cabeça!");
+    						System.out.println("Desequipando " + inventario.get(read1.getI()).getNome() + " e equipando " + inventario.get(i).getNome());
+    						
+    						((Item_Equipável)inventario.get(read1.getI())).desequipar(personagem);
+    						((Item_Equipável)inventario.get(i)).equipar(personagem);
     					} else {
     						((Item_Equipável)inventario.get(i)).equipar(personagem);
     					}
@@ -214,7 +221,11 @@ public class Inventario {
     					System.out.println("Item arma"); //debugg
     					ReadInventario read1 = this.readEquip(ItemEquipavelArma.class); 
     					if (read1.getBool()) {
-    						System.out.println("Você já tem: " + inventario.get(read1.getI()).getNome() + "Equipado como arma!");
+    						System.out.println("Você já tem: " + inventario.get(read1.getI()).getNome() + " equipado como arma!");
+    						System.out.println("Desequipando " + inventario.get(read1.getI()).getNome() + " e equipando " + inventario.get(i).getNome());
+    						
+    						((Item_Equipável)inventario.get(read1.getI())).desequipar(personagem);
+    						((Item_Equipável)inventario.get(i)).equipar(personagem);
     					} else {
     						((Item_Equipável)inventario.get(i)).equipar(personagem);
     					}
@@ -222,7 +233,11 @@ public class Inventario {
     					System.out.println("Item perna"); //debugg
     					ReadInventario read1 = this.readEquip(ItemEquipavelPerna.class);
     					if (read1.getBool()) {
-    						System.out.println("Você já tem: " + inventario.get(read1.getI()).getNome() + "Equipado nas pernas!");
+    						System.out.println("Você já tem: " + inventario.get(read1.getI()).getNome() + " equipado nas pernas!");
+    						System.out.println("Desequipando " + inventario.get(read1.getI()).getNome() + " e equipando " + inventario.get(i).getNome());
+    						
+    						((Item_Equipável)inventario.get(read1.getI())).desequipar(personagem);
+    						((Item_Equipável)inventario.get(i)).equipar(personagem);
     					} else {
     						((Item_Equipável)inventario.get(i)).equipar(personagem);
     					}
@@ -305,8 +320,10 @@ public class Inventario {
     	int inteiro = -1;
     	
     	for (int i = 0; i < this.tamanho;i++) {
-    		if (inventario.get(i).getClass() == classe && ((Item_Equipável)inventario.get(i)).getEquipado()) {
-    			return new ReadInventario(true,i);
+    		if (inventario.get(i) != null) {
+    			if (inventario.get(i).getClass() == classe && ((Item_Equipável)inventario.get(i)).getEquipado()) {
+        			return new ReadInventario(true,i);
+        		}
     		}
     	}
     	

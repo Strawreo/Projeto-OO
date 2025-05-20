@@ -66,7 +66,7 @@ public class Treino {
 	        }
 	    
 	        // Simulação de mudança de ambiente
-	        if (rodada == 3) { // Depois de 10 rodadas, muda o ambiente
+	        if (rodada == 20) { // Depois de 10 rodadas, muda o ambiente
 	            ambienteAtual = new AmbienteDeserto(Display.getInventario());
 	            System.out.println("\n>> O jogador chegou ao deserto! <<");
 	            System.out.println("\nRodada " + rodada + " no ambiente " + ambienteAtual.getNomeAmbiente());
@@ -77,7 +77,7 @@ public class Treino {
 		        System.out.println("As possíveis condições climáticas são " + ambienteAtual.getCondicoesClimaticasAmbiente());
 	        }
 	        rodada++;
-	        if (rodada == 5) { // Depois de 10 rodadas, muda o ambiente
+	        if (rodada == 40) { // Depois de 10 rodadas, muda o ambiente
 	            ambienteAtual = new AmbienteMontanha(Display.getInventario());
 	            System.out.println("\n>> O jogador chegou as montanhas! <<");
 	            System.out.println("\nRodada " + rodada + " no ambiente " + ambienteAtual.getNomeAmbiente());

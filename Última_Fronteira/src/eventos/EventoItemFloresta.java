@@ -38,13 +38,14 @@ public class EventoItemFloresta extends Evento {
 		System.out.println("O impacto que esse evento pdoe causar é " + getImpactoEvento());
 		System.out.println("A condição pra ativação desse evento é " + getCondicaoAtivacaoEvento());
 		Random random = new Random();
-		int num = random.nextInt(1, 3);
+		int num = random.nextInt(1, 4);
 		
 		if (num == 1) {
 			int i = random.nextInt(0,22);
-			this.inventario.obter(new Item_Equipável(ArrayEquip.get(i).getNome(),ArrayEquip.get(i).getDescricao(),
+			this.inventario.obter(ArrayEquip.get(i),jogador);
+			/*(new Item_Equipável(ArrayEquip.get(i).getNome(),ArrayEquip.get(i).getDescricao(),
 									((Item_Equipável)ArrayEquip.get(i)).getDefesa(),ArrayEquip.get(i).getPeso(),
-									((Item_Equipável)ArrayEquip.get(i)).getDano(),false),jogador);
+									((Item_Equipável)ArrayEquip.get(i)).getDano(),false),jogador);*/
 		}
 		else if(num == 2) {
 			
@@ -54,7 +55,7 @@ public class EventoItemFloresta extends Evento {
 		}
 		else if (num == 3) {
 			
-			int i = random.nextInt(0,3);
+			int i = random.nextInt(0,7);
 			this.inventario.obter(ArrayJog.get(i),jogador);
 		}
 		

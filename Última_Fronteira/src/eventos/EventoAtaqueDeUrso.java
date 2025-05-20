@@ -43,9 +43,14 @@ public class EventoAtaqueDeUrso extends Evento{
 		do {
 			if (decisao == 1) {
 				System.out.println("Voce atacou o urso");
+				vidaUrso -= jogador.getDano();
+				if (vidaUrso <= 0) {
+					System.out.println("Você ganhou!!");
+					break;
+				} else {
 				System.out.println("O urso tem " + vidaUrso + " de vida!");
 				System.out.println("Aperte 1 para atacar, 2 para fugir ou 3 para abrir o inventário");
-				decisao = sc1.nextInt();
+				decisao = sc1.nextInt(); }
 			}else if(decisao == 2) {
 				System.out.println("Voce fugiu!!!");
 				fugir = decisao;
