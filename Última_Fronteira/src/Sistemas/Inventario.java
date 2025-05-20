@@ -1,9 +1,8 @@
 package Sistemas;
 import java.util.ArrayList;
 import poo.Personagem;
-import Sistemas.*;
+import equip.*;
 
-@SuppressWarnings("unused")
 public class Inventario {
 
     private int tamanho;
@@ -190,12 +189,43 @@ public class Inventario {
     	
     	if (bool) {
     		if (inventario.get(i) instanceof Item_Equipável) {
-    			Item_Equipável ItemEquipavel = (Item_Equipável) inventario.get(i);
     			
-    			if (ItemEquipavel.getEquipado()) {
-    				ItemEquipavel.desequipar(personagem);
+    			if (((Item_Equipável)inventario.get(i)).getEquipado()) {
+    				((Item_Equipável)inventario.get(i)).desequipar(personagem);
     			} else {
-    				((Item_Equipável) inventario.get(i)).equipar(personagem);
+    				if (inventario.get(i) instanceof ItemEquipavelMao) {
+    					ReadInventario read1 = this.readEquip(ItemEquipavelMao.class);
+    					System.out.println("Item de mao"); //debugg
+    					if (read1.getBool()) {
+    						System.out.println("Você já tem: " + inventario.get(read1.getI()).getNome() + "Equipado na sua mão!"); 						
+    					} else {
+    						((Item_Equipável)inventario.get(i)).equipar(personagem);
+    					}
+    				} else if (inventario.get(i) instanceof ItemEquipavelCabeca) {
+    					System.out.println("Item de cabeca"); //debugg
+    					ReadInventario read1 = this.readEquip(ItemEquipavelCabeca.class);
+    					if (read1.getBool()) {
+    						System.out.println("Você já tem: " + inventario.get(read1.getI()).getNome() + "Equipado na sua cabeça!");
+    					} else {
+    						((Item_Equipável)inventario.get(i)).equipar(personagem);
+    					}
+    				} else if (inventario.get(i) instanceof ItemEquipavelArma) {
+    					System.out.println("Item arma"); //debugg
+    					ReadInventario read1 = this.readEquip(ItemEquipavelArma.class); 
+    					if (read1.getBool()) {
+    						System.out.println("Você já tem: " + inventario.get(read1.getI()).getNome() + "Equipado como arma!");
+    					} else {
+    						((Item_Equipável)inventario.get(i)).equipar(personagem);
+    					}
+    				} else if (inventario.get(i) instanceof ItemEquipavelPerna) {
+    					System.out.println("Item perna"); //debugg
+    					ReadInventario read1 = this.readEquip(ItemEquipavelPerna.class);
+    					if (read1.getBool()) {
+    						System.out.println("Você já tem: " + inventario.get(read1.getI()).getNome() + "Equipado nas pernas!");
+    					} else {
+    						((Item_Equipável)inventario.get(i)).equipar(personagem);
+    					}
+    				}
     			}
     			
     		} else {
@@ -267,5 +297,18 @@ public class Inventario {
     
     public int getTamanho() {
     	return this.tamanho;
+    }
+    
+    public ReadInventario readEquip(Class<? extends Item_Equipável> classe){
+    	boolean bool = false;
+    	int inteiro = -1;
+    	
+    	for (int i = 0; i < this.tamanho;i++) {
+    		if (inventario.get(i).getClass() == classe && ((Item_Equipável)inventario.get(i)).getEquipado()) {
+    			return new ReadInventario(true,i);
+    		}
+    	}
+    	
+    	return new ReadInventario(bool,inteiro);
     }
 }            	    
