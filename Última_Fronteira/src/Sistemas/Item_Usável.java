@@ -1,5 +1,5 @@
 package Sistemas;
-import poo.Personagem;
+import personagens.Personagem;
 
 public class Item_Usável extends ClassItem {
 	

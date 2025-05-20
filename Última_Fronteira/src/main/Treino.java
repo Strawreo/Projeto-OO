@@ -1,14 +1,16 @@
 package main; 
 
-import poo.Ambiente; 
-import poo.AmbienteDeserto;
-import poo.AmbienteFloresta;
-import poo.Evento;
-import poo.GerenciadorDeEventos;
-import poo.Personagem;
 import takeTheWheel.*;
 import java.util.Scanner;
 //import Sistemas.*;
+
+import ambientes.Ambiente;
+import ambientes.AmbienteDeserto;
+import ambientes.AmbienteFloresta;
+import ambientes.AmbienteMontanha;
+import eventos.Evento;
+import eventos.GerenciadorDeEventos;
+import personagens.Personagem;
 
 
 public class Treino {
@@ -37,7 +39,13 @@ public class Treino {
 				break;
 			} else {
 	
-	        System.out.println("\nRodada " + rodada + " no ambiente: " + ambienteAtual.getNomeAmbiente());
+	        System.out.println("\nRodada " + rodada + " no ambiente " + ambienteAtual.getNomeAmbiente());
+	        System.out.println("Descrição do ambiente: " + ambienteAtual.getDescricaoAmbiente());
+	        System.out.println("Dificuldade de exploração desse ambiente é " + ambienteAtual.getDificuldadeExploracaoAmbiente());
+	        System.out.println("Os recursos disponíveis são " + ambienteAtual.getRecursosDisponiveisAmbiente());
+	        System.out.println("A probabilidade de ocorrer eventos é de " + ambienteAtual.getProbabilidadeEventosAmbiente());
+	        System.out.println("As possíveis condições climáticas são " + ambienteAtual.getCondicoesClimaticasAmbiente());
+	        
 	
 	        Evento eventoSorteado = gerenciador.sortearEvento(ambienteAtual);
 	        gerenciador.aplicarEvento(jogador, eventoSorteado, Display);
@@ -58,12 +66,31 @@ public class Treino {
 	        }
 	    
 	        // Simulação de mudança de ambiente
-	        if (rodada == 30) { // Depois de 10 rodadas, muda o ambiente
+	        if (rodada == 3) { // Depois de 10 rodadas, muda o ambiente
 	            ambienteAtual = new AmbienteDeserto(Display.getInventario());
 	            System.out.println("\n>> O jogador chegou ao deserto! <<");
+	            System.out.println("\nRodada " + rodada + " no ambiente " + ambienteAtual.getNomeAmbiente());
+		        System.out.println("Descrição do ambiente: " + ambienteAtual.getDescricaoAmbiente());
+		        System.out.println("Dificuldade de exploração desse ambiente é " + ambienteAtual.getDificuldadeExploracaoAmbiente());
+		        System.out.println("Os recursos disponíveis são " + ambienteAtual.getRecursosDisponiveisAmbiente());
+		        System.out.println("A probabilidade de ocorrer eventos é de " + ambienteAtual.getProbabilidadeEventosAmbiente());
+		        System.out.println("As possíveis condições climáticas são " + ambienteAtual.getCondicoesClimaticasAmbiente());
 	        }
 	        rodada++;
+	        if (rodada == 5) { // Depois de 10 rodadas, muda o ambiente
+	            ambienteAtual = new AmbienteMontanha(Display.getInventario());
+	            System.out.println("\n>> O jogador chegou as montanhas! <<");
+	            System.out.println("\nRodada " + rodada + " no ambiente " + ambienteAtual.getNomeAmbiente());
+		        System.out.println("Descrição do ambiente: " + ambienteAtual.getDescricaoAmbiente());
+		        System.out.println("Dificuldade de exploração desse ambiente é " + ambienteAtual.getDificuldadeExploracaoAmbiente());
+		        System.out.println("Os recursos disponíveis são " + ambienteAtual.getRecursosDisponiveisAmbiente());
+		        System.out.println("A probabilidade de ocorrer eventos é de " + ambienteAtual.getProbabilidadeEventosAmbiente());
+		        System.out.println("As possíveis condições climáticas são " + ambienteAtual.getCondicoesClimaticasAmbiente());
 	        }
+	       
+	        }
+	        
+			
 	        
 		}
 		

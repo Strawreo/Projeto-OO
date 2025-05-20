@@ -1,7 +1,8 @@
 package Sistemas;
 import java.util.ArrayList;
-import poo.Personagem;
+
 import equip.*;
+import personagens.Personagem;
 
 public class Inventario {
 

@@ -1,7 +1,8 @@
 package takeTheWheel;
 import Sistemas.Inventario;
+import personagens.Personagem;
+
 import java.util.Scanner;
-import poo.Personagem;
 
 public class InvTakeTheWheel {
 	

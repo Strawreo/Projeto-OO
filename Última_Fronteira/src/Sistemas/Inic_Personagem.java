@@ -1,5 +1,7 @@
 package Sistemas;
 import java.util.ArrayList;
+
+import personagens.Personagem;
 import poo.*;
 
 public class Inic_Personagem {
