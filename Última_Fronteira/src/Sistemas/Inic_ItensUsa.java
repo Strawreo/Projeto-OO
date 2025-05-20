@@ -10,11 +10,13 @@ public ArrayList<ClassItem> Inicializar_ItensUsa(){
 		
 		ArrayList<ClassItem> ArrayItensUsa = new ArrayList<>();
 		
-		ArrayItensUsa.add(new Item_Usável("Bandagens","Um par de panos rasgados", 10,0,0,2,2,0.2)); //Organizado como: nome,vida,fome,sede,energia,sanidade
-		ArrayItensUsa.add(new Item_Usável("Bandagens","Um par de panos rasgados", 10,0,0,2,2,0.2));
-		ArrayItensUsa.add(new Item_Usável("Bandagens","Um par de panos rasgados", 10,0,0,2,2,0.2));
-		ArrayItensUsa.add(new Item_Usável("Bandagens","Um par de panos rasgados", 10,0,0,2,2,0.2));
-		ArrayItensUsa.add(new Item_Usável("Bandagens","Um par de panos rasgados", 10,0,0,2,2,0.2));
+		//Organizado como: nome,vida,fome,sede,energia,sanidade, quantidade;
+		
+		ArrayItensUsa.add(new Item_Usável("Bandagens","Um par de panos rasgados", 10,0,0,2,2,0.2,0)); 
+		ArrayItensUsa.add(new Item_Usável("Bandagens","Um par de panos rasgados", 10,0,0,2,2,0.2,0));
+		ArrayItensUsa.add(new Item_Usável("Bandagens","Um par de panos rasgados", 10,0,0,2,2,0.2,0));
+		ArrayItensUsa.add(new Item_Usável("Bandagens","Um par de panos rasgados", 10,0,0,2,2,0.2,0));
+		ArrayItensUsa.add(new Item_Usável("Bandagens","Um par de panos rasgados", 10,0,0,2,2,0.2,0));
 		
 		
 		System.out.println("Itens Usáveis Inicializados");

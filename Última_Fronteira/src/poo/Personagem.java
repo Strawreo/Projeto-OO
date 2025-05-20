@@ -17,11 +17,12 @@ public class Personagem {
 	private int tamanhoInventario;
 	private Inventario inventário;
 	private double peso;
-	private int defesa;
+	private double defesa;
 	private String descricao;
+	private double dano;
 	
 	
-	 public Personagem(String nome,String descricao, int vida, int fome, int sede, int energia, int sanidade, int tamanhoInventario,double peso,int defesa) {
+	 public Personagem(String nome,String descricao,double dano, int vida, int fome, int sede, int energia, int sanidade, int tamanhoInventario,double peso,double defesa) {
 		//Aqui tem o Construtor do personagem com todos os atributos
 		
 		this.nome = nome;
@@ -35,6 +36,7 @@ public class Personagem {
 		this.peso = peso;
 		this.defesa = defesa;
 		this.setDescricao(descricao);
+		this.setDano(dano);
 		
 	}
 	 
@@ -108,7 +110,7 @@ public class Personagem {
 		 return this.peso;
 	 }
 	 
-	 public int getDefesa() {
+	 public double getDefesa() {
 		 
 		 return this.defesa;
 	 }
@@ -128,9 +130,9 @@ public class Personagem {
 		 this.peso += peso;
 	}
 	 
-	 public void addToDefesa (int defesa) {
+	 public void addToDefesa (double d) {
 		 
-		 this.defesa += defesa;
+		 this.defesa += d;
 	}
 	 
 	 public void addToVida(int vida) {
@@ -158,8 +160,8 @@ public class Personagem {
 		 this.energia += energia;
 	 }
 	 
-	 public void takeFromDefesa(int defesa) {
-		 this.defesa -= defesa;
+	 public void takeFromDefesa(double d) {
+		 this.defesa -= d;
 	 }
 	 
 	 public void takeFromPeso(double peso) {
@@ -180,5 +182,21 @@ public class Personagem {
 	 
 	public String getNome() {
 		return this.nome;
+	}
+
+	public double getDano() {
+		return dano;
+	}
+
+	public void setDano(double dano) {
+		this.dano = dano;
+	}
+	
+	public void addToDano(double dano) {
+		this.dano += dano;
+	}
+	
+	public void takeFromDano(double dano) {
+		this.dano -= dano;
 	}
 }

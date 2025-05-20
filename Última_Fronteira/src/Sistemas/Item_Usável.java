@@ -3,9 +3,9 @@ import poo.Personagem;
 
 public class Item_Usável extends ClassItem {
 	
-	private int vida,fome,sede,energia,sanidade;
+	private int vida,fome,sede,energia,sanidade,quantidade;
 	
-	public Item_Usável(String nome,String descricao,int vida,int fome,int sede,int energia,int sanidade,double peso) {
+	public Item_Usável(String nome,String descricao,int vida,int fome,int sede,int energia,int sanidade,double peso,int quantidade) {
 		
 		super(nome,descricao,peso);
 		
@@ -14,6 +14,7 @@ public class Item_Usável extends ClassItem {
 		this.sede = sede;
 		this.energia = energia;
 		this.sanidade = sanidade;
+		this.setQuantidade(quantidade);
 		
 	}
 	
@@ -51,6 +52,22 @@ public class Item_Usável extends ClassItem {
 	public int getSanidade() {
 	
 	return this.sanidade;
+	}
+
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+	
+	public void addToQuantidade(int quantidade) {
+		this.quantidade += quantidade;
+	}
+	
+	public void takeFromQuantidade(int quantidade) {
+		this.quantidade -= quantidade;
 	}
 }
 

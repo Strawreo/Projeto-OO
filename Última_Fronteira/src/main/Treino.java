@@ -1,4 +1,4 @@
-package main; //Teste de ambientes : Diego Amaral
+package main; 
 
 import poo.Ambiente; 
 import poo.AmbienteDeserto;
@@ -32,8 +32,12 @@ public class Treino {
 		// contador de rodadas
 		int rodada = 1;
 		while(jogador.getVida() > 0) {
+			
+			if (jogador.getVida() <= 0) {
+				break;
+			} else {
 	
-	        System.out.println("\nRodada " + rodada + " no ambiente: " + ambienteAtual.getNome());
+	        System.out.println("\nRodada " + rodada + " no ambiente: " + ambienteAtual.getNomeAmbiente());
 	
 	        Evento eventoSorteado = gerenciador.sortearEvento(ambienteAtual);
 	        gerenciador.aplicarEvento(jogador, eventoSorteado, Display);
@@ -54,11 +58,12 @@ public class Treino {
 	        }
 	    
 	        // Simulação de mudança de ambiente
-	        if (rodada == 10) { // Depois de 10 rodadas, muda o ambiente
+	        if (rodada == 30) { // Depois de 10 rodadas, muda o ambiente
 	            ambienteAtual = new AmbienteDeserto(Display.getInventario());
 	            System.out.println("\n>> O jogador chegou ao deserto! <<");
 	        }
 	        rodada++;
+	        }
 	        
 		}
 		

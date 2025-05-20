@@ -4,15 +4,17 @@ import poo.Personagem;
 
 public class Item_Equipável extends ClassItem {
 	
-	private int defesa;
+	private double defesa;
 	private boolean equipado;
+	private double dano;
 	
-	public Item_Equipável(String nome,String descricao,int defesa, double peso,boolean equipado) {
+	public Item_Equipável(String nome,String descricao,double defesa, double peso,double dano,boolean equipado) {
 		
 		super(nome,descricao,peso);
 		
 		this.defesa = defesa;
 		this.equipado = equipado;
+		this.setDano(dano);
 		
 		
 	}
@@ -26,6 +28,8 @@ public class Item_Equipável extends ClassItem {
 			this.equipado = true;
 			personagem.addToDefesa(this.getDefesa());
 			personagem.addToPeso(this.getPeso());
+			personagem.addToDano(this.getDano());
+			System.out.println("Item Equipado!");
 		
 		}
 	}
@@ -36,8 +40,9 @@ public class Item_Equipável extends ClassItem {
 			this.equipado = false;
 			personagem.takeFromDefesa(this.getDefesa());
 			personagem.takeFromPeso(this.getPeso());
+			personagem.takeFromDano(this.getDano());
 			
-			System.out.println("Item desequipado!");
+			System.out.println("Item Desequipado!");
 		} else {
 			System.out.println("Item já não está equipado!");
 		}
@@ -51,8 +56,17 @@ public class Item_Equipável extends ClassItem {
 		return this.equipado;
 	}
 	
-	public int getDefesa() {
+	public double getDefesa() {
 		return this.defesa;
 		
 	}
+
+	public double getDano() {
+		return dano;
+	}
+
+	public void setDano(double dano) {
+		this.dano = dano;
+	}
+	
 }

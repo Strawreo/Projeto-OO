@@ -14,16 +14,16 @@ public class InvTakeTheWheel {
 		this.personagem = personagem;
 	}
 	
-	public void DisplayInventario() {
+	public void DisplayInventario() throws NullPointerException{
 		
 		this.inventario.ler();
 		System.out.println("");
 		System.out.println("Opções: ");
 		System.out.println("1.Descartar");
-		System.out.println("2.Equipar");
+		System.out.println("2.Equipar / Desequipar");
 		System.out.println("3.Usar");
 		System.out.println("4.Inspecionar");
-		System.out.println("5.Criar");
+		System.out.println("5.Criar *Ainda não implementado*");
 		System.out.println("6.Sair do Inventário");
 		
 		String C = this.scanner.nextLine();
@@ -39,9 +39,9 @@ public class InvTakeTheWheel {
 			
 		}
 		
-		else if (C.equals("Equipar") || C.equals("2")) {
+		else if (C.equals("Equipar") || C.equals("2") || C.equals("Desequipar")) {
 			
-			System.out.println("Qual item deseja equipar?");
+			System.out.println("Qual item deseja equipar/desequipar?");
 			String item = this.scanner.nextLine();
 			
 			this.inventario.equipar(item, personagem);
@@ -80,6 +80,8 @@ public class InvTakeTheWheel {
 			String item2 = this.scanner.nextLine(); // ainda deve ser implementado!!
 			
 			this.DisplayInventario();*/
+			
+			this.DisplayInventario();
 			
 		}
 		

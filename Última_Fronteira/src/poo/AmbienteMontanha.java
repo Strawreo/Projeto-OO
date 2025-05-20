@@ -2,11 +2,14 @@ package poo;
 
 import java.util.ArrayList;
 import java.util.List;
-import Sistemas.*;
 
-public class AmbienteFloresta extends Ambiente {
-	
-	
+import Sistemas.ClassItem;
+import Sistemas.Inic_ItensEquip;
+import Sistemas.Inic_ItensJog;
+import Sistemas.Inic_ItensUsa;
+import Sistemas.Inventario;
+
+public class AmbienteMontanha extends Ambiente{
 	private List<Evento> eventos;
 	private Inventario inventario;
 	
@@ -16,14 +19,14 @@ public class AmbienteFloresta extends Ambiente {
 	private ArrayList<ClassItem> ItensEquip = new Inic_ItensEquip().Inicializar_ItensEquip();
 	private ArrayList<ClassItem> ItensJog = new Inic_ItensJog().Inicializar_ItensJog();
 	
-	public AmbienteFloresta(Inventario inventario) {
+	public AmbienteMontanha(Inventario inventario) {
 		super(
-				"Floresta.", 
-				"Floresta úmida, com água presente e com árvores bem altas.",
-				"Dificuldade 3",
-				"Bandagens, madeira, água.",
-				"100%.",
-				"Umidade alta."
+				"Montanhas.", 
+				"Picos montanhosos, íngrimes com neve. Chão bem instável",
+				"Dificuldade 6",
+				"Bandagens, madeira, água, comida, metais raros",
+				"100%",
+				"Muito frio, tempestade de neve"
 		);
 		this.inventario = inventario;
 		this.eventos = eventosPossiveis();
@@ -67,5 +70,4 @@ public class AmbienteFloresta extends Ambiente {
 		
 		return this.inventario;
 	}
-
 }

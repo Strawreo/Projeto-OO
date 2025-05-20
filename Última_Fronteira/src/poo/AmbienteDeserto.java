@@ -1,27 +1,38 @@
 package poo;
+import Sistemas.Inventario;
 
 import java.util.ArrayList;
 import java.util.List;
-import Sistemas.*;
 
-public class AmbienteDeserto implements Ambiente{
+public class AmbienteDeserto extends Ambiente{
 
 private List<Evento> eventos;
-private final String nome = "Deserto";
 private Inventario inventario;
 	
 	public AmbienteDeserto(Inventario inventario) {
-		this.inventario = inventario;
+		super(
+				"Deserto.",
+				"Deserto escaldante. Poucas árvores, água, e recursos.",
+				"Dificuldade 5.",
+				"Bandagens.",
+				"100%.",
+				"Seca escaldante."
+				
+		);
 		this.eventos = eventosPossiveis();
+		this.inventario = inventario;
 	
 	}
 	
-	@Override
-	public String getNome() {
-		return nome;
-	}
+	
+	String nome = getNomeAmbiente();
+	String descricao = getDescricaoAmbiente();
+	String dificuldade = getDificuldadeExploracaoAmbiente();
+	String recursos = getRecursosDisponiveisAmbiente();
+	String probabilidade = getProbabilidadeEventosAmbiente();
+	String clima = getCondicoesClimaticasAmbiente();
 
-	@Override
+	
 	public List<Evento> getEventosPossiveis() {
 		return new ArrayList<>(eventos);
 	}
@@ -30,7 +41,6 @@ private Inventario inventario;
 		ArrayList<Evento> eventosPossiveisDeserto = new ArrayList<Evento>();
 		eventosPossiveisDeserto.add(new EventoAtaqueEscorpiao());
 		eventosPossiveisDeserto.add(new EventoTempestadeDeAreia());
-		
 		return eventosPossiveisDeserto;
 	}
 
