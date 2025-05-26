@@ -1,16 +1,18 @@
 package personagens;
 
-public class Criatura {
+public abstract 	class Criatura {
 	
 	private String nome;
 	private double vida;
 	private double defesa;
+	private int dano;
 	
-	public Criatura( String nome,double vida,double defesa) {
+	public Criatura( String nome,double vida,double defesa, int dano) {
 		
+		this.setNome(nome);
 		this.setVida(vida);
 		this.setDefesa(defesa);
-		this.setNome(nome);
+		
 	}
 
 	public String getNome() {
@@ -36,5 +38,12 @@ public class Criatura {
 	public void setDefesa(double defesa) {
 		this.defesa = defesa;
 	}
+	public int getDano() {
+		return dano;
+	}
+	public void setDano(int dano) {
+		this.dano = dano;
+	}
+	public abstract void atacar(Personagem jogador);
 
 }

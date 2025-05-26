@@ -1,8 +1,14 @@
 package ambientes;
-import Sistemas.Inventario;
+import Sistemas.Inventario; 
 import eventos.Evento;
 import eventos.EventoAtaqueEscorpiao;
-import eventos.EventoTempestadeDeAreia;
+import eventos.EventoCriatura;
+import eventos.TempestadeDeAreia;
+import inimigos.Escorpiao;
+import inimigos.GolemDoDeserto;
+import inimigos.Lobo;
+import inimigos.Yeti;
+import personagens.Criatura;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,8 +48,14 @@ private Inventario inventario;
 	
 	public ArrayList<Evento> eventosPossiveis() {
 		ArrayList<Evento> eventosPossiveisDeserto = new ArrayList<Evento>();
-		eventosPossiveisDeserto.add(new EventoAtaqueEscorpiao());
-		eventosPossiveisDeserto.add(new EventoTempestadeDeAreia());
+		
+		ArrayList<Criatura> criaturasDeserto = new ArrayList<>();
+	    criaturasDeserto.add(new Escorpiao());
+	    criaturasDeserto.add(new GolemDoDeserto());
+	    
+	    
+		eventosPossiveisDeserto.add(new EventoCriatura(criaturasDeserto));
+		eventosPossiveisDeserto.add(new TempestadeDeAreia());
 		return eventosPossiveisDeserto;
 	}
 

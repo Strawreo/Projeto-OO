@@ -6,7 +6,12 @@ import Sistemas.*;
 import eventos.Evento;
 import eventos.EventoAtaqueDeUrso;
 import eventos.EventoClimático;
+import eventos.EventoCriatura;
 import eventos.EventoItemFloresta;
+import eventos.Tempestade;
+import inimigos.Lobo;
+import inimigos.Urso;
+import personagens.Criatura;
 
 public class AmbienteFloresta extends Ambiente {
 	
@@ -33,10 +38,19 @@ public class AmbienteFloresta extends Ambiente {
 		this.eventos = eventosPossiveis();
 	}
 	
+	
+	
 	public ArrayList<Evento> eventosPossiveis() {
+		
 		ArrayList<Evento> eventosPossiveisFloresta = new ArrayList<Evento>();
-		eventosPossiveisFloresta.add(new EventoAtaqueDeUrso());
-		eventosPossiveisFloresta.add(new EventoClimático());
+		
+		ArrayList<Criatura> criaturasFloresta = new ArrayList<>();
+	    criaturasFloresta.add(new Urso());
+	    criaturasFloresta.add(new Lobo());
+	    
+	    
+		eventosPossiveisFloresta.add(new EventoCriatura(criaturasFloresta));
+		eventosPossiveisFloresta.add(new Tempestade());
 		eventosPossiveisFloresta.add(new EventoItemFloresta(this.inventario,this.ItensUsa,this.ItensEquip,this.ItensJog));
 		
 		if (this.inventario == null) {

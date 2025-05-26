@@ -1,6 +1,6 @@
 package ambientes;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.List;
 
 import Sistemas.ClassItem;
@@ -10,7 +10,13 @@ import Sistemas.Inic_ItensUsa;
 import Sistemas.Inventario;
 import eventos.Evento;
 import eventos.EventoAtaqueDeYeti;
-import eventos.EventoDeslizamentoDeNeve;
+import eventos.EventoCriatura;
+import eventos.NevascaRepentina;
+import inimigos.Lobo;
+import inimigos.Urso;
+import inimigos.Yeti;
+import personagens.Criatura;
+
 
 public class AmbienteMontanha extends Ambiente{
 	private List<Evento> eventos;
@@ -37,8 +43,15 @@ public class AmbienteMontanha extends Ambiente{
 	
 	public ArrayList<Evento> eventosPossiveis() {
 		ArrayList<Evento> eventosPossiveisFloresta = new ArrayList<Evento>();
-		eventosPossiveisFloresta.add(new EventoAtaqueDeYeti());
-		eventosPossiveisFloresta.add(new EventoDeslizamentoDeNeve());
+		
+		ArrayList<Criatura> criaturasMontanha = new ArrayList<>();
+	    criaturasMontanha.add(new Yeti());
+	    criaturasMontanha.add(new Lobo());
+	    
+	    
+		eventosPossiveisFloresta.add(new EventoCriatura(criaturasMontanha));
+		
+		eventosPossiveisFloresta.add(new NevascaRepentina());
 		
 		
 		if (this.inventario == null) {

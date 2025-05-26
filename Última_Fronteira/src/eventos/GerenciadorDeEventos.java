@@ -1,17 +1,24 @@
 package eventos;
 
-import java.util.List;
+import java.util.List; 
 import takeTheWheel.*;
 import java.util.Random;
 
 import ambientes.Ambiente;
 import personagens.Personagem;
+import eventos.EventoAlucinacao;
 
 public class GerenciadorDeEventos {
 	
-	public Evento sortearEvento(Ambiente local) {
+	public Evento sortearEvento(Ambiente local, Personagem jogador) {
         List<Evento> eventos = local.getEventosPossiveis();
+        
+        if (jogador.getSanidade() <= 30) {
+            eventos.add(new EventoAlucinacao()); 
+        }
+        
         if (eventos.isEmpty()) return null;
+   
        
         
         Random random = new Random();
@@ -28,5 +35,14 @@ public class GerenciadorDeEventos {
             evento.executar(jogador, Inv); }
         }
     }
+	public void verificarSanidadeFinal(Personagem jogador) {
+	    if (jogador.getSanidade() <= 0) {
+	        System.out.println("\n>>> SUA SANIDADE CHEGOU A ZERO <<<");
+	        System.out.println("Você não consegue mais distinguir realidade de ilusão.");
+	        System.out.println("Sua mente colapsa completamente...");
+	        System.out.println(">> FIM DE JOGO <<");
+	        System.exit(0); // encerra o programa
+	    }
+	}
 
 }
