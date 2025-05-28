@@ -55,7 +55,7 @@ public class EventoAtaqueDeUrso extends Evento{
 				System.out.println("Voce fugiu!!!");
 				fugir = decisao;
 			}else if(decisao == 3) {
-				Display.DisplayInventario();
+				Display.displayInventario();
 				System.out.println("Aperte 1 para realizar um ataque ou 2 para fugir");
 				decisao = sc1.nextInt();
 			}else if (decisao != 1 && decisao != 2 && decisao != 3) {

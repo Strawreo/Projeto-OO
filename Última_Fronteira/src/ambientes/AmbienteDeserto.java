@@ -1,5 +1,4 @@
 package ambientes;
-import Sistemas.Inventario; 
 import eventos.Evento;
 import eventos.EventoAtaqueEscorpiao;
 import eventos.EventoCriatura;
@@ -9,6 +8,7 @@ import inimigos.GolemDoDeserto;
 import inimigos.Lobo;
 import inimigos.Yeti;
 import personagens.Criatura;
+import sistemas.Inventario;
 
 import java.util.ArrayList;
 import java.util.List;

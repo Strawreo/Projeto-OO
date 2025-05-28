@@ -3,11 +3,6 @@ package ambientes;
 import java.util.ArrayList; 
 import java.util.List;
 
-import Sistemas.ClassItem;
-import Sistemas.Inic_ItensEquip;
-import Sistemas.Inic_ItensJog;
-import Sistemas.Inic_ItensUsa;
-import Sistemas.Inventario;
 import eventos.Evento;
 import eventos.EventoAtaqueDeYeti;
 import eventos.EventoCriatura;
@@ -16,6 +11,11 @@ import inimigos.Lobo;
 import inimigos.Urso;
 import inimigos.Yeti;
 import personagens.Criatura;
+import sistemas.ClassItem;
+import sistemas.InicItensEquip;
+import sistemas.InicItensCraft;
+import sistemas.InicItensUsa;
+import sistemas.Inventario;
 
 
 public class AmbienteMontanha extends Ambiente{
@@ -24,9 +24,9 @@ public class AmbienteMontanha extends Ambiente{
 	
 	
 	
-	private ArrayList<ClassItem> ItensUsa = new Inic_ItensUsa().Inicializar_ItensUsa();
-	private ArrayList<ClassItem> ItensEquip = new Inic_ItensEquip().Inicializar_ItensEquip();
-	private ArrayList<ClassItem> ItensJog = new Inic_ItensJog().Inicializar_ItensJog();
+	private ArrayList<ClassItem> ItensUsa = new InicItensUsa().inicializarItensUsa();
+	private ArrayList<ClassItem> ItensEquip = new InicItensEquip().Inicializar_ItensEquip();
+	private ArrayList<ClassItem> ItensJog = new InicItensCraft().inicializarItensCraft();
 	
 	public AmbienteMontanha(Inventario inventario) {
 		super(

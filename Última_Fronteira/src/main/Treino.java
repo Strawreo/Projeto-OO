@@ -11,6 +11,7 @@ import ambientes.AmbienteMontanha;
 import eventos.Evento;
 import eventos.GerenciadorDeEventos;
 import personagens.Personagem;
+import sistemas.ItemCraft;
 
 
 public class Treino {
@@ -23,6 +24,7 @@ public class Treino {
 		GerenciadorDeEventos gerenciador = new GerenciadorDeEventos();
 		
 		Ambiente ambienteAtual = new AmbienteFloresta(jogador.getInventario());
+		jogador.getInventario().obter(new ItemCraft("Tecido","Um pedaço de tecido rasgado",0), jogador);
 		
 		System.out.println(jogador.toString());
 		System.out.println(jogador.getDescricao());
@@ -58,7 +60,7 @@ public class Treino {
 	        
 	        if (resposta.equals("Y")) {
 	        	
-	        	Display.DisplayInventario();
+	        	Display.displayInventario();
 	        } 
 	        else if (resposta.equals("N")) {
 	        	

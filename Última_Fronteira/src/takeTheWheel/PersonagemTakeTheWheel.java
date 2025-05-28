@@ -2,8 +2,8 @@ package takeTheWheel;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-import Sistemas.Inic_Personagem;
 import personagens.Personagem;
+import sistemas.InicPersonagem;
 
 public class PersonagemTakeTheWheel {
 	
@@ -12,7 +12,7 @@ public class PersonagemTakeTheWheel {
 	
 	public PersonagemTakeTheWheel() {
 		
-		Inic_Personagem inicializador = new Inic_Personagem();
+		InicPersonagem inicializador = new InicPersonagem();
 		this.array = inicializador.inicializarPersonagens();
 		
 		System.out.println("Bem vindo a Última Fronteira");

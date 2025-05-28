@@ -1,5 +1,5 @@
 package personagens;
-import Sistemas.*;
+import sistemas.*;
 
 public class Personagem {
 	

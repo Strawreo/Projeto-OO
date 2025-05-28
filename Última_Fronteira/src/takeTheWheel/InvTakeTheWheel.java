@@ -1,21 +1,25 @@
 package takeTheWheel;
-import Sistemas.Inventario;
 import personagens.Personagem;
-
+import sistemas.*;
+import java.util.ArrayList;
 import java.util.Scanner;
+import craft.*;
 
 public class InvTakeTheWheel {
 	
 	private Scanner scanner = new Scanner(System.in);
 	private Inventario inventario;
 	private Personagem personagem;
+	private ArrayList<Receita> receitas;
 	
 	public InvTakeTheWheel(Inventario inventario,Personagem personagem) {
 		this.inventario = inventario;
 		this.personagem = personagem;
-	}
+		InicReceitas receita = new InicReceitas();
+		this.receitas = receita.inicializarReceitas();	
+		}
 	
-	public void DisplayInventario() throws NullPointerException{
+	public void displayInventario() throws NullPointerException{
 		
 		this.inventario.ler();
 		System.out.println("");
@@ -24,7 +28,7 @@ public class InvTakeTheWheel {
 		System.out.println("2.Equipar / Desequipar");
 		System.out.println("3.Usar");
 		System.out.println("4.Inspecionar");
-		System.out.println("5.Criar *Ainda não implementado*");
+		System.out.println("5.Criar");
 		System.out.println("6.Sair do Inventário");
 		
 		String C = this.scanner.nextLine();
@@ -36,7 +40,7 @@ public class InvTakeTheWheel {
 			
 			this.inventario.descartar(item, personagem);
 			
-			this.DisplayInventario();
+			this.displayInventario();
 			
 		}
 		
@@ -47,7 +51,7 @@ public class InvTakeTheWheel {
 			
 			this.inventario.equipar(item, personagem);
 			
-			this.DisplayInventario();
+			this.displayInventario();
 			
 		}
 		
@@ -58,7 +62,7 @@ public class InvTakeTheWheel {
 			
 			this.inventario.usar(item, personagem);
 			
-			this.DisplayInventario();
+			this.displayInventario();
 			
 		}
 		
@@ -69,20 +73,26 @@ public class InvTakeTheWheel {
 			
 			this.inventario.inspecionar(item);
 			
-			this.DisplayInventario();
+			this.displayInventario();
 		}
 		
 		else if (C.equals("Criar") || C.equals("5")) {
 			
-			/*System.out.println("Quais itens você deseja combinar?");
-			System.out.println("Item 1: ");
-			String item1 = this.scanner.nextLine();
-			System.out.println("Item 2: ");
-			String item2 = this.scanner.nextLine(); // ainda deve ser implementado!!
+			this.inventario.ler(receitas);
 			
-			this.DisplayInventario();*/
+			System.out.println("Qual item deseja criar?");
+			String itemCriar = this.scanner.nextLine();
 			
-			this.DisplayInventario();
+			ReadInventario read = this.readRec(itemCriar);
+			
+			if (read.getBool()) {
+				this.inventario.criar(receitas.get(read.getI()), personagem);
+			} else {
+				System.out.println("Receita não encontrada!");
+				this.displayInventario();
+			}
+			
+			this.displayInventario();
 			
 		}
 		
@@ -97,8 +107,30 @@ public class InvTakeTheWheel {
 		else {
 			
 			System.out.println("Entrada Inválida!");
-			this.DisplayInventario();
+			this.displayInventario();
 		}
+	}
+	
+	public ReadInventario readRec(String nome) {
+		
+		boolean achou = false;
+		int local = -1;
+		
+		for (int i = 0; i < this.receitas.size();i++) {
+			if (nome.equals(this.receitas.get(i).getNome())) {
+				achou = true;
+				local = i;
+				break;
+			}
+			
+		}
+		
+		if (achou) {
+			return new ReadInventario(achou,local);
+		} else {
+			return new ReadInventario(false,-1);
+		}
+		
 	}
 	
 	public Inventario getInventario() {

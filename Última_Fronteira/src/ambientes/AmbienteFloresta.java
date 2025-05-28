@@ -2,7 +2,7 @@ package ambientes;
 
 import java.util.ArrayList;
 import java.util.List;
-import Sistemas.*;
+
 import eventos.Evento;
 import eventos.EventoAtaqueDeUrso;
 import eventos.EventoClimático;
@@ -12,6 +12,7 @@ import eventos.Tempestade;
 import inimigos.Lobo;
 import inimigos.Urso;
 import personagens.Criatura;
+import sistemas.*;
 
 public class AmbienteFloresta extends Ambiente {
 	
@@ -21,9 +22,9 @@ public class AmbienteFloresta extends Ambiente {
 	
 	
 	
-	private ArrayList<ClassItem> ItensUsa = new Inic_ItensUsa().Inicializar_ItensUsa();
-	private ArrayList<ClassItem> ItensEquip = new Inic_ItensEquip().Inicializar_ItensEquip();
-	private ArrayList<ClassItem> ItensJog = new Inic_ItensJog().Inicializar_ItensJog();
+	private ArrayList<ClassItem> ItensUsa = new InicItensUsa().inicializarItensUsa();
+	private ArrayList<ClassItem> ItensEquip = new InicItensEquip().Inicializar_ItensEquip();
+	private ArrayList<ClassItem> ItensJog = new InicItensCraft().inicializarItensCraft();
 	
 	public AmbienteFloresta(Inventario inventario) {
 		super(
