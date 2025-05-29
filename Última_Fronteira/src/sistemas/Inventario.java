@@ -141,13 +141,19 @@ public class Inventario {
     			
     		else {
     			
+    			try {
+    			
     			double pesoItem = inventario.get(i).getPeso();
     			personagem.takeFromPeso(pesoItem);
     			
     			inventario.remove(i);
     			inventario.add(null);
     			
-    			System.out.println("Item Descartado!!: " + nomeItem);
+    			System.out.println("Item Descartado!!: " + nomeItem);}
+    			
+    			catch(NullPointerException e) {
+    				System.out.println("Slot já está vazio!");
+    			}
     			
     		}
     		
@@ -204,7 +210,6 @@ public class Inventario {
     			} else {
     				if (inventario.get(i) instanceof ItemEquipavelMao) {
     					ReadInventario read1 = this.readEquip(ItemEquipavelMao.class);
-    					System.out.println("Item de mao"); //debugg
     					if (read1.getBool()) {
     						System.out.println("Você já tem: " + inventario.get(read1.getI()).getNome() + " equipado na sua mão!"); 	
     						System.out.println("Desequipando " + inventario.get(read1.getI()).getNome() + " e equipando " + inventario.get(i).getNome());
@@ -215,7 +220,6 @@ public class Inventario {
     						((ItemEquipavel)inventario.get(i)).equipar(personagem);
     					}
     				} else if (inventario.get(i) instanceof ItemEquipavelCabeca) {
-    					System.out.println("Item de cabeca"); //debugg
     					ReadInventario read1 = this.readEquip(ItemEquipavelCabeca.class);
     					if (read1.getBool()) {
     						System.out.println("Você já tem: " + inventario.get(read1.getI()).getNome() + " equipado na sua cabeça!");
@@ -227,7 +231,6 @@ public class Inventario {
     						((ItemEquipavel)inventario.get(i)).equipar(personagem);
     					}
     				} else if (inventario.get(i) instanceof ItemEquipavelArma) {
-    					System.out.println("Item arma"); //debugg
     					ReadInventario read1 = this.readEquip(ItemEquipavelArma.class); 
     					if (read1.getBool()) {
     						System.out.println("Você já tem: " + inventario.get(read1.getI()).getNome() + " equipado como arma!");
@@ -239,7 +242,6 @@ public class Inventario {
     						((ItemEquipavel)inventario.get(i)).equipar(personagem);
     					}
     				} else if (inventario.get(i) instanceof ItemEquipavelPerna) {
-    					System.out.println("Item perna"); //debugg
     					ReadInventario read1 = this.readEquip(ItemEquipavelPerna.class);
     					if (read1.getBool()) {
     						System.out.println("Você já tem: " + inventario.get(read1.getI()).getNome() + " equipado nas pernas!");
@@ -288,7 +290,12 @@ public class Inventario {
     	int i = read.getI();
     	
     	if (bool) {
-    		System.out.println(this.inventario.get(i).getDescricao());
+    		try{
+    			System.out.println(this.inventario.get(i).getDescricao());
+    		}
+    		catch(IndexOutOfBoundsException e) {
+    			System.out.println("Slot vazio!");
+    		}
     		
     	} else {
     		System.out.println("Item não encontrado no inventário!!");
@@ -329,6 +336,29 @@ public class Inventario {
     public ReadInventario read(String nome) throws NullPointerException {
     	boolean bool = false;
     	int inteiro = -1;
+    	boolean isInteger = true;
+    	
+    	try {
+    		int numero = Integer.parseInt(nome);
+    	} catch(NumberFormatException e) {
+    		isInteger = false;
+    		System.out.println("Entrada inválida!");
+    	}
+    	
+    	if(isInteger) {
+    		try {
+    			int numero = Integer.parseInt(nome);
+    			ClassItem item = this.inventario.get(numero-1);
+    			if(this.inventario.get(numero-1) == null) {
+    				System.out.println("Slot Vazio!");
+    				return new ReadInventario(false,-1);
+    			} else {
+    			return new ReadInventario(true,numero-1);}
+    		} catch(IndexOutOfBoundsException e) {
+    			System.out.println("Entrada inválida!");
+    			return new ReadInventario(false,-1);
+    		}
+    	} else {
     	
     	if (nome == null) {
     		throw new NullPointerException("O nome fornecido não pode ser nulo");
@@ -348,6 +378,8 @@ public class Inventario {
     		
     	} else {
     		return new ReadInventario(false, 0);
+    	}
+    
     	}
     }
     
