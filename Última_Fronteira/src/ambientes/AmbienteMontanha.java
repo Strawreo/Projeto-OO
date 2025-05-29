@@ -1,10 +1,7 @@
 package ambientes;
 
 import java.util.ArrayList;  
-import Sistemas.Inventario;
-import eventos.Evento;
-import eventos.EventoCriatura;
-import eventos.NevascaRepentina;
+import eventos.*;
 import inimigos.Lobo;
 import inimigos.Yeti;
 import personagens.Criatura;
@@ -12,7 +9,7 @@ import personagens.Criatura;
 
 public class AmbienteMontanha extends Ambiente{
 	
-	public AmbienteMontanha(Inventario inventario) {
+	public AmbienteMontanha() {
 		super(
 				"Montanhas.", 
 				"Picos montanhosos, íngrimes com neve. Chão bem instável",
@@ -21,7 +18,7 @@ public class AmbienteMontanha extends Ambiente{
 				"100%",
 				"Muito frio, tempestade de neve"
 		);
-		setInventario(inventario);
+		
 		setEventos(eventosPossiveis());
 	}
 	
@@ -35,6 +32,7 @@ public class AmbienteMontanha extends Ambiente{
 	    
 		eventos.add(new EventoCriatura(criaturasMontanha));		
 		eventos.add(new NevascaRepentina());
+		eventos.add(new EventoItemMontanha());
 		
 		
 		return eventos;

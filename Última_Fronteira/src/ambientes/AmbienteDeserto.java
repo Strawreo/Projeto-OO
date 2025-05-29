@@ -1,9 +1,6 @@
 package ambientes;
 
-import Sistemas.Inventario;  
-import eventos.Evento;
-import eventos.EventoCriatura;
-import eventos.TempestadeDeAreia;
+import eventos.*;
 import inimigos.Escorpiao;
 import inimigos.GolemDoDeserto;
 import personagens.Criatura;
@@ -13,7 +10,7 @@ import java.util.ArrayList;
 public class AmbienteDeserto extends Ambiente{
 
 	
-	public AmbienteDeserto(Inventario inventario) {
+	public AmbienteDeserto() {
 		super(
 				"Deserto.",
 				"Deserto escaldante. Poucas árvores, água, e recursos.",
@@ -23,7 +20,7 @@ public class AmbienteDeserto extends Ambiente{
 				"Seca escaldante."
 				
 		);
-		setInventario(inventario);
+	
 		setEventos(eventosPossiveis());
 	}
 	
@@ -37,6 +34,7 @@ public class AmbienteDeserto extends Ambiente{
 	    
 		eventos.add(new EventoCriatura(criaturasDeserto));
 		eventos.add(new TempestadeDeAreia());
+		eventos.add(new EventoItemDeserto());
 		return eventos;
 	}
 

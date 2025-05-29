@@ -2,7 +2,7 @@ package ambientes;
 
 import java.util.ArrayList;  
 
-import Sistemas.*;
+import sistemas.*;
 import eventos.Evento;
 import eventos.EventoCriatura;
 import eventos.EventoItemFloresta;
@@ -39,7 +39,7 @@ public class AmbienteFloresta extends Ambiente {
 	    
 		eventos.add(new EventoCriatura(criaturasFloresta));
 		eventos.add(new Tempestade());
-		eventos.add(new EventoItemFloresta(getInventario(),getItensUsa(),getItensEquip(),getItensJog()));
+		eventos.add(new EventoItemFloresta());
 		
 
 		verificarInventario();
