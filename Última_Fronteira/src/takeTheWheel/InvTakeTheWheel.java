@@ -115,22 +115,39 @@ public class InvTakeTheWheel {
 		
 		boolean achou = false;
 		int local = -1;
-		
-		for (int i = 0; i < this.receitas.size();i++) {
-			if (nome.equals(this.receitas.get(i).getNome())) {
-				achou = true;
-				local = i;
-				break;
+		boolean isInteger = true;
+
+		try {
+		    int numero = Integer.parseInt(nome);
+		} catch (NumberFormatException e) {
+		    isInteger = false;
+		    System.out.println("Entrada inválida!");
+		}
+
+		if (isInteger) {
+			try {
+				int numero = Integer.parseInt(nome);
+				Receita receita = this.receitas.get(numero-1);
+				return new ReadInventario(true,numero-1);
+			} catch (IndexOutOfBoundsException e) {
+				System.out.println("Entrada inválida!");
+				return new ReadInventario(false,-1);
 			}
-			
+} else {
+		    for (int i = 0; i < this.receitas.size();i++) {
+		        if (nome.equals(this.receitas.get(i).getNome())) {
+		        achou = true;
+		        local = i;
+		        break;
+		    }
+
 		}
-		
-		if (achou) {
-			return new ReadInventario(achou,local);
-		} else {
-			return new ReadInventario(false,-1);
+		    if (achou) {
+		        return new ReadInventario(achou,local);
+		    } else {
+		        return new ReadInventario(false,-1);
+		    }
 		}
-		
 	}
 	
 	public Inventario getInventario() {
