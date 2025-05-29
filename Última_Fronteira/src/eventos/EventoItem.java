@@ -28,11 +28,7 @@ public abstract class EventoItem extends Evento {
 	
 	@Override
 	public void executar(Personagem jogador, InvTakeTheWheel Inv) {
-		System.out.println("Evento: " + getNomeEvento());
-		System.out.println("Descrição: " + getDescricaoEvento());
-		System.out.println("A probabilidade de ocorrência desse evento é de: " + getProbabilidadeOcorrenciaEvento());
-		System.out.println("O impacto que esse evento pdoe causar é " + getImpactoEvento());
-		System.out.println("A condição pra ativação desse evento é " + getCondicaoAtivacaoEvento());
+		exibirDetalhes();
 		Random random = new Random();
 		int num = random.nextInt(1, 4);
 		

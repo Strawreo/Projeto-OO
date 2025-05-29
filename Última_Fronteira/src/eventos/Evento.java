@@ -52,8 +52,17 @@ public abstract class Evento {
 		
 	}
 	
-	public void teste() {
-		
+	public void exibirDetalhes() {
+		System.out.println("Evento " + getNomeEvento());
+		System.out.println(getDescricaoEvento());
+		System.out.println("A probabilidade de ocorrência desse evento é de: " + getProbabilidadeOcorrenciaEvento());
+		System.out.println(getImpactoEvento());
+		System.out.println(getCondicaoAtivacaoEvento());
+	}
+	public enum NivelPerigo {
+	    BAIXO,
+	    MEDIO,
+	    ALTO
 	}
 
 }

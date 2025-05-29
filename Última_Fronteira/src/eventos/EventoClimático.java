@@ -11,7 +11,9 @@ public abstract class EventoClimático extends Evento {
 	}
 
 	@Override
-	public abstract void executar(Personagem jogador, InvTakeTheWheel inv);
+	public void executar(Personagem jogador, InvTakeTheWheel inv) {
+		exibirDetalhes();
+	}
 	
 	
 }

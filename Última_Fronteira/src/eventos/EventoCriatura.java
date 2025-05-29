@@ -23,35 +23,27 @@ public class EventoCriatura extends Evento{
 				"a criatura que você enfrentará depende do ambiente atual."
 		);
 		this.criaturasPossiveis = criaturasDoAmbiente;
-		
-		
-		
 	}
 	
-	private String avaliarPerigo(Criatura c) {
-        double nivel = c.getVida() + c.getDefesa();
-        if (nivel < 20) return "baixo";
-        if (nivel < 40) return "médio";
-        return "alto";
-    }
+	// melhoria do metodo de avaliarPerigo para ser possivel utlizar condicional com ele se necessário
+	private NivelPerigo avaliarPerigo(Criatura c) {
+	    double nivel = c.getVida() + c.getDefesa();
+	    if (nivel < 20) return NivelPerigo.BAIXO;
+	    if (nivel < 40) return NivelPerigo.MEDIO;
+	    return NivelPerigo.ALTO;
+	}
 	public void executar(Personagem jogador, InvTakeTheWheel Display) {
 		this.criatura = criaturasPossiveis.get(random.nextInt(criaturasPossiveis.size()));
 	    double vidaCriaturaCombate = criatura.getVida();
+	    
+	    
 		
+	    NivelPerigo perigo = avaliarPerigo(criatura);
 	    this.setDescricaoEvento("Você encontrou um " + criatura.getNome() + " !");
-		this.setImpactoEvento("O nível de perigo é de " + avaliarPerigo(criatura));
+		this.setImpactoEvento("O nível de perigo é de " + perigo.toString().toLowerCase());
 		this.setCondicaoAtivacaoEvento("Encontro aleatório de criatura");
 		
-		System.out.println("Evento " + getNomeEvento());
-		System.out.println(getDescricaoEvento());
-		System.out.println("A probabilidade de ocorrência desse evento é de: " + getProbabilidadeOcorrenciaEvento());
-		System.out.println(getImpactoEvento());
-		System.out.println(getCondicaoAtivacaoEvento());
-		
-		this.setImpactoEvento("O nível de perigo é " + avaliarPerigo(criatura));
-		this.setCondicaoAtivacaoEvento("Encontro aleatório de criatura");
-		
-		criatura.atacar(jogador);
+		exibirDetalhes();
 		
 		System.out.println("A criatura tem " + vidaCriaturaCombate + " de vida!");
 		System.out.println("Aperte 1 para atacar e 2 para fugir");
@@ -61,12 +53,15 @@ public class EventoCriatura extends Evento{
 		do {
 			if (decisao == 1) {
 				System.out.println("Voce atacou o " + criatura.getNome());
-				vidaCriaturaCombate = (vidaCriaturaCombate - jogador.getDano());
+				double danoReal = criatura.calcularDanoRecebido(jogador.getDano());
+				vidaCriaturaCombate -= danoReal;
+				System.out.printf("Você causou %.2f de dano!\n", danoReal);
 				if (vidaCriaturaCombate <= 0) {
 					System.out.println("Você ganhou!!");
 					break;
 				} else {
-				System.out.println("A criatura tem " + vidaCriaturaCombate + " de vida!");
+				System.out.printf(criatura.getNome() + " tem %.2f de vida\n", vidaCriaturaCombate);
+				criatura.atacar(jogador);
 				System.out.println("Aperte 1 para atacar, 2 para fugir ou 3 para abrir o inventário");
 				decisao = sc1.nextInt(); }
 			}else if(decisao == 2) {
