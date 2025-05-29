@@ -342,7 +342,6 @@ public class Inventario {
     		int numero = Integer.parseInt(nome);
     	} catch(NumberFormatException e) {
     		isInteger = false;
-    		System.out.println("Entrada inválida!");
     	}
     	
     	if(isInteger) {
