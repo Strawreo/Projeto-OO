@@ -12,8 +12,15 @@ public abstract 	class Criatura {
 		this.setNome(nome);
 		this.setVida(vida);
 		this.setDefesa(defesa);
+		this.setDano(dano);
 		
 	}
+	public double calcularDanoRecebido(double danoBruto) {
+	    double reducao = this.defesa / 100.0;
+	    double danoFinal = danoBruto * (1 - reducao);
+	    return Math.max(danoFinal, 0);
+	}
+
 
 	public String getNome() {
 		return nome;

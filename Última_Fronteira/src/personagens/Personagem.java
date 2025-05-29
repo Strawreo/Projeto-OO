@@ -9,7 +9,7 @@ public abstract class Personagem {
 	 * terá, mas os valores dos atributos serão atribuídos na classe de cada um
 	 */
 	private String nome;
-    private int vida;
+    private double vida;
 	private int fome;
 	private int sede;
 	private int energia;
@@ -22,7 +22,7 @@ public abstract class Personagem {
 	private double dano;
 	
 	
-	 public Personagem(String nome,String descricao,double dano, int vida, int fome, int sede, int energia, int sanidade, int tamanhoInventario,double peso,double defesa) {
+	 public Personagem(String nome,String descricao,double dano, double vida, int fome, int sede, int energia, int sanidade, int tamanhoInventario,double peso,double defesa) {
 		//Aqui tem o Construtor do personagem com todos os atributos
 		// nome,descricao,dano, vida, fome, sede, energia, sanidade, tamanhoInventario, peso, defesa
 		
@@ -49,10 +49,15 @@ public abstract class Personagem {
 					"Energia: " + this.energia + "\n" + "Sanidade: " + this.sanidade + "\n" + "Tamanho do inventário: " + this.tamanhoInventario + "\n";
 			
 		}
-	 public void perderVida(int dano) {
-			this.vida -= dano;
-			if (this.vida < 0)this.vida = 0;
-			System.out.println(nome + " agora tem " + vida + " de vida.");
+	 public void perderVida(double danoBruto) {
+		    double reducao = this.defesa / 100.0;
+		    double danoFinal = danoBruto * (1 - reducao);
+		    if (danoFinal < 0) danoFinal = 0;
+
+		    this.vida -= danoFinal;
+		    if (this.vida < 0) this.vida = 0;
+
+		    System.out.println(nome + " perdeu " + danoFinal + " de vida. Vida atual: " + vida);
 		}
 	 public void sentirFome(int dano) {
 			System.out.println("Sentindo fome...");
@@ -86,7 +91,7 @@ public abstract class Personagem {
 		}
 	 
 	 
-	 public int getVida() {
+	 public double getVida() {
 		 return this.vida;
 	 }
 	 
