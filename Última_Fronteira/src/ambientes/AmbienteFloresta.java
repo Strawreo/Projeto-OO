@@ -2,7 +2,6 @@ package ambientes;
 
 import java.util.ArrayList;  
 
-import sistemas.*;
 import eventos.Evento;
 import eventos.EventoCriatura;
 import eventos.EventoItemFloresta;
