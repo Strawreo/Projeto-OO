@@ -24,7 +24,7 @@ public class InicReceitas {
 			));
 		ArrayList<ClassItem> espadaDePedraIng = new ArrayList<>(Arrays.asList(
 			    craftaveis.get(3), //Graveto
-			    craftaveis.get(0) //Pedra
+			    craftaveis.get(1) //Pedra
 			));
 		ArrayList<ClassItem> bandagensIng = new ArrayList<>(Arrays.asList(
 			    craftaveis.get(2) //Tecido
