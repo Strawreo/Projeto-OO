@@ -37,17 +37,21 @@ public class Treino {
 		// contador de rodadas
 		int rodada = 1;
 		while(jogador.getVida() > 0) {
-			
+			if (rodada == 1 || rodada == 4 || rodada == 8) {
+				// melhora nas mensagens excessivas do main
+				System.out.println("Descrição do ambiente: " + ambienteAtual.getDescricaoAmbiente());
+		        System.out.println("Dificuldade de exploração desse ambiente é " + ambienteAtual.getDificuldadeExploracaoAmbiente());
+		        System.out.println("Os recursos disponíveis são " + ambienteAtual.getRecursosDisponiveisAmbiente());
+		        System.out.println("A probabilidade de ocorrer eventos é de " + ambienteAtual.getProbabilidadeEventosAmbiente());
+		        System.out.println("As possíveis condições climáticas são " + ambienteAtual.getCondicoesClimaticasAmbiente());
+			}
 			if (jogador.getVida() <= 0) {
+				System.out.println("Fim de jogo! A vida chegou a 0 \n");
 				break;
 			} else {
 	
 	        System.out.println("\nRodada " + rodada + " no ambiente " + ambienteAtual.getNomeAmbiente());
-	        System.out.println("Descrição do ambiente: " + ambienteAtual.getDescricaoAmbiente());
-	        System.out.println("Dificuldade de exploração desse ambiente é " + ambienteAtual.getDificuldadeExploracaoAmbiente());
-	        System.out.println("Os recursos disponíveis são " + ambienteAtual.getRecursosDisponiveisAmbiente());
-	        System.out.println("A probabilidade de ocorrer eventos é de " + ambienteAtual.getProbabilidadeEventosAmbiente());
-	        System.out.println("As possíveis condições climáticas são " + ambienteAtual.getCondicoesClimaticasAmbiente());
+	        
 	        
 	
 	        Evento eventoSorteado = gerenciador.sortearEvento(ambienteAtual, jogador);
@@ -68,28 +72,15 @@ public class Treino {
 	        	System.out.println("Prosseguindo ao próximo turno!");
 	     
 	        }
+	        rodada++;
 	    
 	        // Simulação de mudança de ambiente
-	        if (rodada == 3) { // Depois de 10 rodadas, muda o ambiente
+	        if (rodada == 4) { // Depois de 10 rodadas, muda o ambiente
 	            ambienteAtual = new AmbienteDeserto();
-	            System.out.println("\n>> O jogador chegou ao deserto! <<");
-	            System.out.println("\nRodada " + rodada + " no ambiente " + ambienteAtual.getNomeAmbiente());
-		        System.out.println("Descrição do ambiente: " + ambienteAtual.getDescricaoAmbiente());
-		        System.out.println("Dificuldade de exploração desse ambiente é " + ambienteAtual.getDificuldadeExploracaoAmbiente());
-		        System.out.println("Os recursos disponíveis são " + ambienteAtual.getRecursosDisponiveisAmbiente());
-		        System.out.println("A probabilidade de ocorrer eventos é de " + ambienteAtual.getProbabilidadeEventosAmbiente());
-		        System.out.println("As possíveis condições climáticas são " + ambienteAtual.getCondicoesClimaticasAmbiente());
 	        }
-	        rodada++;
-	        if (rodada == 20) { // Depois de 10 rodadas, muda o ambiente
-	            ambienteAtual = new AmbienteMontanha();
-	            System.out.println("\n>> O jogador chegou as montanhas! <<");
-	            System.out.println("\nRodada " + rodada + " no ambiente " + ambienteAtual.getNomeAmbiente());
-		        System.out.println("Descrição do ambiente: " + ambienteAtual.getDescricaoAmbiente());
-		        System.out.println("Dificuldade de exploração desse ambiente é " + ambienteAtual.getDificuldadeExploracaoAmbiente());
-		        System.out.println("Os recursos disponíveis são " + ambienteAtual.getRecursosDisponiveisAmbiente());
-		        System.out.println("A probabilidade de ocorrer eventos é de " + ambienteAtual.getProbabilidadeEventosAmbiente());
-		        System.out.println("As possíveis condições climáticas são " + ambienteAtual.getCondicoesClimaticasAmbiente());
+	       
+	        if (rodada == 8) { // Depois de 10 rodadas, muda o ambiente
+	            ambienteAtual = new AmbienteMontanha();  
 	        }
 	       
 	        }
@@ -100,7 +91,7 @@ public class Treino {
 		
 		scanner.close();
 		
-		System.out.println("Fim de jogo! A vida chegou a 0 \n");
+	
 		
 	
 
