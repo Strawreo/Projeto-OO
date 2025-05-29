@@ -13,7 +13,7 @@ import personagens.Criatura;
 
 public class AmbienteFloresta extends Ambiente {
 		
-	public AmbienteFloresta(Inventario inventario) {
+	public AmbienteFloresta() {
 		super(
 				"Floresta.", 
 				"Floresta úmida, com água presente e com árvores bem altas.",
