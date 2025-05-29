@@ -27,9 +27,9 @@ public class GerenciadorDeEventos {
 	public void aplicarEvento(Personagem jogador, Evento evento, InvTakeTheWheel Inv) {
         if (evento != null) {
         	
-        	if (evento instanceof EventoItemFloresta) {
+        	if (evento instanceof EventoItem) {
         		System.out.println("Evento de Item encontrado!"); //debugging
-        		((EventoItemFloresta)evento).executar(jogador, Inv);
+        		((EventoItem)evento).executar(jogador, Inv);
         		
         	} else {
             evento.executar(jogador, Inv); }

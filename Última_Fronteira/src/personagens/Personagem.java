@@ -1,7 +1,7 @@
 package personagens;
 import sistemas.*;
 
-public class Personagem {
+public abstract class Personagem {
 	
 	/*
 	 * Criação da classe principal personagem que vai se derivar as classes de cada
@@ -24,6 +24,7 @@ public class Personagem {
 	
 	 public Personagem(String nome,String descricao,double dano, int vida, int fome, int sede, int energia, int sanidade, int tamanhoInventario,double peso,double defesa) {
 		//Aqui tem o Construtor do personagem com todos os atributos
+		// nome,descricao,dano, vida, fome, sede, energia, sanidade, tamanhoInventario, peso, defesa
 		
 		this.nome = nome;
 		this.vida = vida;

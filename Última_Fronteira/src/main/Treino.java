@@ -23,9 +23,10 @@ public class Treino {
 		
 		GerenciadorDeEventos gerenciador = new GerenciadorDeEventos();
 		
-		Ambiente ambienteAtual = new AmbienteFloresta(jogador.getInventario());
+		Ambiente ambienteAtual = new AmbienteFloresta();
 		jogador.getInventario().obter(new ItemCraft("Tecido","Um pedaço de tecido rasgado",0), jogador);
-		
+		jogador.getInventario().obter(new ItemCraft("Pedra","É um agregado sólido que ocorre naturalmente e é constituído por um ou mais minerais ou mineraloides, em outros termos, uma pedra",0), jogador);
+		jogador.getInventario().obter(new ItemCraft("Graveto","É apenas um pedaço de pau",0), jogador);
 		System.out.println(jogador.toString());
 		System.out.println(jogador.getDescricao());
 		
@@ -70,7 +71,7 @@ public class Treino {
 	    
 	        // Simulação de mudança de ambiente
 	        if (rodada == 3) { // Depois de 10 rodadas, muda o ambiente
-	            ambienteAtual = new AmbienteDeserto(Display.getInventario());
+	            ambienteAtual = new AmbienteDeserto();
 	            System.out.println("\n>> O jogador chegou ao deserto! <<");
 	            System.out.println("\nRodada " + rodada + " no ambiente " + ambienteAtual.getNomeAmbiente());
 		        System.out.println("Descrição do ambiente: " + ambienteAtual.getDescricaoAmbiente());
@@ -81,7 +82,7 @@ public class Treino {
 	        }
 	        rodada++;
 	        if (rodada == 20) { // Depois de 10 rodadas, muda o ambiente
-	            ambienteAtual = new AmbienteMontanha(Display.getInventario());
+	            ambienteAtual = new AmbienteMontanha();
 	            System.out.println("\n>> O jogador chegou as montanhas! <<");
 	            System.out.println("\nRodada " + rodada + " no ambiente " + ambienteAtual.getNomeAmbiente());
 		        System.out.println("Descrição do ambiente: " + ambienteAtual.getDescricaoAmbiente());
