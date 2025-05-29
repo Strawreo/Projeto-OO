@@ -306,8 +306,6 @@ public class Inventario {
 			String nome = ingredientes.get(i).getNome();
 			read = this.read(nome);
 			
-			System.out.println(ingredientes.size());
-			
 			if (read.getBool()) {
 				System.out.println("Você possui um dos itens necessários para o craft: " + nome );
 				itensAchados += 1;
