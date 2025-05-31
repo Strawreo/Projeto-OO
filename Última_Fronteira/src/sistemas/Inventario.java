@@ -317,7 +317,7 @@ public class Inventario {
 				System.out.println("Você possui um dos itens necessários para o craft: " + nome );
 				itensAchados += 1;
 			} else {
-				System.out.println("Você não possui um dos itens necessários para o craft do item!");
+				System.out.println("Você não possui um dos itens necessários para o craft do item!" + ingredientes.get(i).getNome());
 				break;
 			}
 			

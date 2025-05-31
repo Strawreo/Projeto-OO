@@ -8,8 +8,6 @@ public class InicItensCraft {
 	
 	public InicItensCraft() {
 		
-		System.out.println("Incializando itens jogáveis");
-		
 		ArrayList<ClassItem> ArrayItensJog = new ArrayList<>();
 		
 		/*0*/ArrayItensJog.add(new ItemCraft("Garrafa de vidro","Uma pena que esteja vazia",0)); // nome, descrição, quantia (Todos os itens jogaveis possuim peso(0.5)
@@ -20,7 +18,6 @@ public class InicItensCraft {
 		/*5*/ArrayItensJog.add(new ItemCraft("Ouro","Será ouro de tolo? Apenas um ferreiro saberia dizer",0));
 		/*6*/ArrayItensJog.add(new ItemCraft("Bronze","Liga metálica de cobre estanho, um ferreiro pode achá-lo útil",0));
 		/*7*/ArrayItensJog.add(new ItemCraft("???","Parece ser algum tipo de metal, um ferreiro poderia lhe falar do que se trata",0));
-		System.out.println("Itens Jogáveis Inicializados");
 		
 		this.Array = ArrayItensJog;
 		

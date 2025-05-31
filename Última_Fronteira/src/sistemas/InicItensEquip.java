@@ -6,8 +6,6 @@ import equip.*;
 public class InicItensEquip {
 	
 public ArrayList<ClassItem> Inicializar_ItensEquip(){
-	
-	System.out.println("Inicializando itens equipáveis");
 		
 	ArrayList<ClassItem> ArrayItensEquip = new ArrayList<>();
 		
@@ -44,7 +42,6 @@ public ArrayList<ClassItem> Inicializar_ItensEquip(){
 	/*24*/	ArrayItensEquip.add(new ItemEquipavelArma("Espada de pedra","Um Graveto com uma pedra afiada amarrada a ponto, está mais para uma lança",0,1.5,4,false));
 	/*25*/	ArrayItensEquip.add(new ItemEquipavelArma("Espada de bronze","Produzida por um mecânico ou um ferreiro!",0,2,7,false));	
 	
-	System.out.println("Itens equipáveis inicializados");
 		
 	return ArrayItensEquip;
 		
