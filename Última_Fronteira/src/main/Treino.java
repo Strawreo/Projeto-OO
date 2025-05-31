@@ -8,6 +8,7 @@ import ambientes.Ambiente;
 import ambientes.AmbienteDeserto;
 import ambientes.AmbienteFloresta;
 import ambientes.AmbienteMontanha;
+import equip.ItemEquipavelCabeca;
 import eventos.Evento;
 import eventos.GerenciadorDeEventos;
 import personagens.Personagem;
@@ -27,6 +28,9 @@ public class Treino {
 		jogador.getInventario().obter(new ItemCraft("Tecido","Um pedaço de tecido rasgado",0), jogador);
 		jogador.getInventario().obter(new ItemCraft("Pedra","É um agregado sólido que ocorre naturalmente e é constituído por um ou mais minerais ou mineraloides, em outros termos, uma pedra",0), jogador);
 		jogador.getInventario().obter(new ItemCraft("Graveto","É apenas um pedaço de pau",0), jogador);
+		jogador.getInventario().obter(new ItemEquipavelCabeca("Capacete de madeira","Na verdade este capacete é um balde que você encontrou no chão",2,3,0,false),jogador);
+		jogador.getInventario().obter(new ItemEquipavelCabeca("Capacete de madeira","Na verdade este capacete é um balde que você encontrou no chão",2,3,0,false),jogador);
+		
 		System.out.println(jogador.toString());
 		System.out.println(jogador.getDescricao());
 		
