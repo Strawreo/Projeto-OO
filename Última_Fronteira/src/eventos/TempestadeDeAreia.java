@@ -3,7 +3,7 @@ package eventos;
 import personagens.Personagem;
 import takeTheWheel.InvTakeTheWheel;
 
-public class TempestadeDeAreia extends EventoClimático{
+public class TempestadeDeAreia extends EventoClimatico{
 
 	public TempestadeDeAreia() {
 		super( 
