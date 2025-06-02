@@ -56,6 +56,15 @@ public abstract class Ambiente {
 	public List<Evento> getEventosPossiveis(){
 		 return new ArrayList<>(eventos);// lista defensiva para evitar problemas no futuro(opcional)
 	}
+	// metodo para adicionar e remover eventos, se necessário
+	public void adicionarEvento(Evento e) {
+		// se o evento ja existir, ele não é adicionado novamente para evitar duplicações
+	    if (!eventos.contains(e)) eventos.add(e);
+	}
+
+	public void removerEvento(Evento e) {
+	    eventos.remove(e);
+	}
 	
 	
 	
