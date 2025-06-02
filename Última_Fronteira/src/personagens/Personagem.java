@@ -57,8 +57,9 @@ public abstract class Personagem {
 		    this.vida -= danoFinal;
 		    if (this.vida < 0) this.vida = 0;
 
-		    System.out.printf(nome + " perdeu %.2f de vida. Vida atual: %.2f \n" + danoFinal, vida);
+		    System.out.printf("%s perdeu  %.2f de vida. Vida atual: %.2f \n" , nome, danoFinal, vida);
 		}
+	
 	 public void sentirFome(int dano) {
 			System.out.println("Sentindo fome...");
 			this.fome += dano;
