@@ -23,7 +23,7 @@ public class Inventario {
     	Boolean ItemJaExisteNoInv = read.getBool();
     	Boolean bool = true;
 
-        if(ItemJaExisteNoInv && item instanceof ItemCraft || item instanceof ItemUsavel) {
+        if(ItemJaExisteNoInv && item instanceof ItemCraft || ItemJaExisteNoInv && item instanceof ItemUsavel) {
         	
         	double pesoItem = item.getPeso();
         	personagem.addToPeso(pesoItem);
@@ -135,7 +135,7 @@ public class Inventario {
             			inventario.add(null);
         			}
         			try {
-        			System.out.println("Item descartado!!: " + inventario.get(i).getNome());}
+        			System.out.println("Item descartado!!");}
         			catch(NullPointerException e) {
         				System.out.println("Item descartado!!");
         			}
@@ -152,7 +152,7 @@ public class Inventario {
     			inventario.remove(i);
     			inventario.add(null);
     			
-    			System.out.println("Item Descartado!!: " + nomeItem);}
+    			System.out.println("Item Descartado!!");}
     			
     			catch(NullPointerException e) {
     				System.out.println("Slot já está vazio!");
