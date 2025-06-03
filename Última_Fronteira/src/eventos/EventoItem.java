@@ -38,7 +38,7 @@ public abstract class EventoItem extends Evento {
 		}
 		else if(num == 2) {
 			
-			int i = random.nextInt(0,6);
+			int i = random.nextInt(0,5);
 			jogador.getInventario().obter(itensUsa.get(i), jogador);
 		
 		}
