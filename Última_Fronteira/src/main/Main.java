@@ -2,12 +2,7 @@ package main;
 
 import takeTheWheel.*;
 import java.util.Scanner;
-//import Sistemas.*;
-
-import ambientes.Ambiente;
-import ambientes.AmbienteDeserto;
-import ambientes.AmbienteFloresta;
-import ambientes.AmbienteMontanha;
+import ambientes.*;
 import equip.ItemEquipavelCabeca;
 import eventos.Evento;
 import eventos.EventoAlucinacao;
@@ -40,7 +35,7 @@ public class Main {
 		// contador de rodadas
 		int rodada = 1;
 		while(jogador.getVida() > 0) {
-			if (rodada == 1 || rodada == 11 || rodada == 21) {
+			if (rodada == 1 || rodada == 11 || rodada == 21|| rodada == 31) {
 				// melhora nas mensagens excessivas do main
 				System.out.println("Descrição do ambiente: " + ambienteAtual.getDescricaoAmbiente());
 		        System.out.println("Dificuldade de exploração desse ambiente é " + ambienteAtual.getDificuldadeExploracaoAmbiente());
@@ -96,6 +91,9 @@ public class Main {
 	        if (rodada == 21) { // Depois de 10 rodadas, muda o ambiente
 	            ambienteAtual = new AmbienteMontanha();  
 	        }
+	        if (rodada == 31) {
+	        	ambienteAtual = new AmbienteRuina();
+	        }
 	       
 	        }
 			gerenciador.atualizarEventosEspeciais(ambienteAtual, jogador, alucinacao);
@@ -103,25 +101,10 @@ public class Main {
 			for (Evento e : ambienteAtual.getEventosPossiveis()) {
 			    System.out.println("- " + e.getNomeEvento());
 			}
-			
-			
-			
-			
 	       
 		
 		scanner.close();
 		
-	
-		
-	
-
 		System.out.println(jogador.toString());
-
-		
-		
-		
-		
-		
-
 	}
 }
