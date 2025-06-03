@@ -6,13 +6,17 @@ import java.util.Scanner;
 
 import personagens.Criatura;
 import personagens.Personagem;
+import sistemas.InicItensCraft;
 import takeTheWheel.InvTakeTheWheel;
+import java.util.ArrayList;
+import sistemas.ClassItem;
 
 public class EventoCriatura extends Evento{
 	private Criatura criatura;
 	private List<Criatura> criaturasPossiveis;
 	private Random random = new Random();
 	Scanner sc1 = new Scanner(System.in);
+	private ArrayList<ClassItem> itensCraft = new InicItensCraft().inicializarItensCraft();
 	
 	public EventoCriatura(List<Criatura> criaturasDoAmbiente) {
 		super(
@@ -58,6 +62,7 @@ public class EventoCriatura extends Evento{
 				System.out.printf("Você causou %.2f de dano!\n", danoReal);
 				if (vidaCriaturaCombate <= 0) {
 					System.out.println("Você ganhou!!");
+					jogador.getInventario().obter(this.itensCraft.get(random.nextInt(0,8)), jogador);
 					break;
 				} else {
 				System.out.printf(criatura.getNome() + " tem %.2f de vida\n", vidaCriaturaCombate);
