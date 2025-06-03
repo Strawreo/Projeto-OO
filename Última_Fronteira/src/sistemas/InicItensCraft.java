@@ -17,7 +17,6 @@ public class InicItensCraft {
 		/*4*/ArrayItensJog.add(new ItemCraft("Ferro Bruto","Um ferreiro seria útil agora",0));
 		/*5*/ArrayItensJog.add(new ItemCraft("Ouro","Será ouro de tolo? Apenas um ferreiro saberia dizer",0));
 		/*6*/ArrayItensJog.add(new ItemCraft("Bronze","Liga metálica de cobre estanho, um ferreiro pode achá-lo útil",0));
-		/*7*/ArrayItensJog.add(new ItemCraft("???","Parece ser algum tipo de metal, um ferreiro poderia lhe falar do que se trata",0));
 		
 		this.Array = ArrayItensJog;
 		
