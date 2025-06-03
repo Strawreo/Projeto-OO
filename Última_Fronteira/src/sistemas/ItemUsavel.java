@@ -19,12 +19,17 @@ public class ItemUsavel extends ClassItem {
 	}
 	
 	public void usar(Personagem personagem) {
-		
-		personagem.addToVida(this.vida);
+	
 		personagem.addToFome(this.fome);
 		personagem.addToSede(this.sede);
 		personagem.addToEnergia(this.energia);
 		personagem.addToSanidade(this.sanidade);
+		
+		if (personagem.getNome().equals("Médico")){
+			personagem.addToVida(this.vida*2);
+		} else {
+			personagem.addToVida(this.vida);
+		}
 		
 		if(personagem.getVida()> personagem.getVidaTotal()) {
 			personagem.setVida(personagem.getVidaTotal());
@@ -45,6 +50,14 @@ public class ItemUsavel extends ClassItem {
 		System.out.println(this.getNome() + " Usado!");
 		System.out.println(personagem.toString());
 		
+	}
+	
+	@Override
+	public String toString() {
+		String string = "Peso: " + this.getPeso() + "\n" + "Vida: " + this.getVida() + "\n" + 
+						"Fome: " + this.getFome() + "\n" + "Sede: " + this.getSede() + "\n" + 
+						"Energia: " + this.getEnergia() + "\n" + "Sanidade: " + this.getSanidade() + "\n";
+		return string;
 	}
 	
 	public int getVida() {

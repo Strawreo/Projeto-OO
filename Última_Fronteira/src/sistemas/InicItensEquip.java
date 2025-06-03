@@ -40,7 +40,7 @@ public ArrayList<ClassItem> Inicializar_ItensEquip(){
 	/*22*/	ArrayItensEquip.add(new ItemEquipavelArma("Zweihander","Espada de duas mãos, comumente usada por mercenários",0,6,12,false));
 	/*23*/	ArrayItensEquip.add(new ItemEquipavelArma("Marreta","Um grande martelo, feito por suas mãos",0,5,9,false)); // Exclusivo do Mecânico (Craft)
 	/*24*/	ArrayItensEquip.add(new ItemEquipavelArma("Espada de pedra","Um Graveto com uma pedra afiada amarrada a ponto, está mais para uma lança",0,1.5,4,false));
-	/*25*/	ArrayItensEquip.add(new ItemEquipavelArma("Espada de bronze","Produzida por um mecânico ou um ferreiro!",0,2,7,false));	
+	/*25*/	ArrayItensEquip.add(new ItemEquipavelArma("Espada de bronze","Produzida por um ferreiro!",0,2,7,false));	
 	
 		
 	return ArrayItensEquip;

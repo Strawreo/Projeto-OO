@@ -14,6 +14,8 @@ public abstract class ClassItem {
 		this.peso = peso;
 	}
 	
+	public abstract String toString();
+	
 	public String getNome() {
 		
 		return this.nome;

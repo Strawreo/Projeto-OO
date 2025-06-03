@@ -12,6 +12,12 @@ public class ItemCraft extends ClassItem {
 		this.quantidade = quantidade;
 	}
 	
+	@Override
+	public String toString() {
+		String string = "Peso: " + this.getPeso() + "\n";
+		return string;
+	}
+	
 	public int getQuantidade() {
 		return this.quantidade;
 		

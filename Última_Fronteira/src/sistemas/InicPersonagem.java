@@ -10,11 +10,13 @@ public class InicPersonagem {
 		Medico medico = new Medico();
 		Arqueiro arqueiro = new Arqueiro();
 		ZeNinguem zeNinguem = new ZeNinguem();
+		Ferreiro ferreiro = new Ferreiro();
 		
 		array.add(rastreador);
 		array.add(medico);
 		array.add(arqueiro);
 		array.add(zeNinguem); 
+		array.add(ferreiro);
 		
 		return array;
 	}

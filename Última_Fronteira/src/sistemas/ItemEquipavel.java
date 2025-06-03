@@ -26,6 +26,9 @@ public class ItemEquipavel extends ClassItem {
 		else {
 			
 			this.equipado = true;
+			if(personagem.getNome().equals("Arqueiro")) {
+				this.setDano(this.dano + 7);
+			}
 			personagem.addToDefesa(this.getDefesa());
 			personagem.addToPeso(this.getPeso());
 			personagem.addToDano(this.getDano());
@@ -48,8 +51,12 @@ public class ItemEquipavel extends ClassItem {
 		}
 		
 	}
-			
 	
+	@Override
+	public String toString() {
+		String string = "Peso: " + this.getPeso() + "\n" + "Defesa: " + this.getDefesa() + "\n" + "Dano: " + this.getDano() + "\n";
+		return string;
+	}
 	
 	public boolean getEquipado() {
 		

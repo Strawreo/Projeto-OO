@@ -197,7 +197,6 @@ public class Inventario {
     		int num = i + 1;
     		System.out.println(num + "." + receitas.get(i).getNome());
     	}
-    	
     }
     				
     public void equipar(String nome, Personagem personagem) {
@@ -295,6 +294,7 @@ public class Inventario {
     	if (bool) {
     		try{
     			System.out.println(this.inventario.get(i).getDescricao());
+    			System.out.println(this.inventario.get(i).toString());
     		}
     		catch(IndexOutOfBoundsException e) {
     			System.out.println("Slot vazio!");
