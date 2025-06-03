@@ -21,7 +21,7 @@ public class AmbienteFloresta extends Ambiente {
 				"100%.",
 				"Umidade alta."
 		);
-		setInventario(inventario);
+		
 		setEventos(eventosPossiveis()); // aqui ele gera todos os eventos para esse ambiente onde utlizando o metodo da superclasse ele protege
 	}
 	
@@ -41,7 +41,7 @@ public class AmbienteFloresta extends Ambiente {
 		eventos.add(new EventoItemFloresta());
 		
 
-		verificarInventario();
+
 		
 		return eventos; // aqui eu crio uma lista para uso próprio na classe, então não tem problema de encapsulamento
 	}
