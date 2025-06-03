@@ -40,7 +40,7 @@ public class Treino {
 		// contador de rodadas
 		int rodada = 1;
 		while(jogador.getVida() > 0) {
-			if (rodada == 1 || rodada == 4 || rodada == 8) {
+			if (rodada == 1 || rodada == 11 || rodada == 21) {
 				// melhora nas mensagens excessivas do main
 				System.out.println("Descrição do ambiente: " + ambienteAtual.getDescricaoAmbiente());
 		        System.out.println("Dificuldade de exploração desse ambiente é " + ambienteAtual.getDificuldadeExploracaoAmbiente());
@@ -77,11 +77,11 @@ public class Treino {
 	        rodada++;
 	    
 	        // Simulação de mudança de ambiente
-	        if (rodada == 4) { // Depois de 10 rodadas, muda o ambiente
+	        if (rodada == 11) { // Depois de 10 rodadas, muda o ambiente
 	            ambienteAtual = new AmbienteDeserto();
 	        }
 	       
-	        if (rodada == 8) { // Depois de 10 rodadas, muda o ambiente
+	        if (rodada == 21) { // Depois de 10 rodadas, muda o ambiente
 	            ambienteAtual = new AmbienteMontanha();  
 	        }
 	       
