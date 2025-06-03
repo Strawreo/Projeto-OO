@@ -6,7 +6,7 @@ import personagens.Personagem;
 public class Escorpiao extends Criatura{
 
 	public Escorpiao() {
-		super("Escorpião", 8, 3, 10);
+		super("Escorpião", 20, 3, 10);
 		
 	}
 
