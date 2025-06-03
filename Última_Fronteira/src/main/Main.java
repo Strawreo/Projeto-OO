@@ -103,6 +103,10 @@ public class Main {
 			for (Evento e : ambienteAtual.getEventosPossiveis()) {
 			    System.out.println("- " + e.getNomeEvento());
 			}
+			
+			
+			
+			
 	       
 		
 		scanner.close();
