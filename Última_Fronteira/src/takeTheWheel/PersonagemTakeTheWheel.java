@@ -41,6 +41,7 @@ public class PersonagemTakeTheWheel {
 		if(decisao.equals("1") || decisao.equals("Rastreador")) {
 			System.out.println(this.array.get(0).getDescricao());
 			System.out.println(this.array.get(0).toString());
+			System.out.println("Tamanho do inventário: " + this.array.get(0).getTamanhoInventario());
 			
 			System.out.println("Escolher este personagem?");
 			System.out.println("Y/N");
@@ -54,7 +55,8 @@ public class PersonagemTakeTheWheel {
 		} else if(decisao.equals("2") || decisao.equals("Médico")) {
 				System.out.println(this.array.get(1).getDescricao());
 				System.out.println(this.array.get(1).toString());
-			
+				System.out.println("Tamanho do inventário: " + this.array.get(1).getTamanhoInventario());
+				
 				System.out.println("Escolher este personagem?");
 				System.out.println("Y/N");
 				String dec1 = scanner.nextLine();
@@ -67,6 +69,7 @@ public class PersonagemTakeTheWheel {
 			} else if(decisao.equals("3") || decisao.equals("Arqueiro")) {
 				System.out.println(this.array.get(2).getDescricao());
 				System.out.println(this.array.get(2).toString());
+				System.out.println("Tamanho do inventário: " + this.array.get(2).getTamanhoInventario());
 			
 				System.out.println("Escolher este personagem?");
 				System.out.println("Y/N");
@@ -80,6 +83,7 @@ public class PersonagemTakeTheWheel {
 			} else if(decisao.equals("4") || decisao.equals("Zé ninguém")) {
 				System.out.println(this.array.get(3).getDescricao());
 				System.out.println(this.array.get(3).toString());
+				System.out.println("Tamanho do inventário: " + this.array.get(3).getTamanhoInventario());
 			
 				System.out.println("Escolher este personagem?");
 				System.out.println("Y/N");
@@ -93,6 +97,7 @@ public class PersonagemTakeTheWheel {
 			} else if(decisao.equals("5") || decisao.equalsIgnoreCase("Ferreiro")) {
 				System.out.println(this.array.get(4).getDescricao());
 				System.out.println(this.array.get(4).toString());
+				System.out.println("Tamanho do inventário: " + this.array.get(4).getTamanhoInventario());
 			
 				System.out.println("Escolher este personagem?");
 				System.out.println("Y/N");
