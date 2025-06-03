@@ -63,6 +63,16 @@ public class EventoCriatura extends Evento{
 				if (vidaCriaturaCombate <= 0) {
 					System.out.println("Você ganhou!!");
 					jogador.getInventario().obter(this.itensCraft.get(random.nextInt(0,8)), jogador);
+					
+					if (jogador.getNome().equals("Rastreador")) {
+						int aleatorio = random.nextInt(0,2);
+						if(aleatorio == 0) {
+							break;
+						} else if(aleatorio == 1) {
+							System.out.println("Ao vasculhar os arredores você encontra mais um item!");
+							jogador.getInventario().obter(this.itensCraft.get(random.nextInt(0,8)), jogador);
+						}
+					}
 					break;
 				} else {
 				System.out.printf(criatura.getNome() + " tem %.2f de vida\n", vidaCriaturaCombate);
