@@ -9,6 +9,8 @@ import personagens.Personagem;
 import sistemas.InicItensCraft;
 import takeTheWheel.InvTakeTheWheel;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+
 import sistemas.ClassItem;
 
 public class EventoCriatura extends Evento{
@@ -52,7 +54,17 @@ public class EventoCriatura extends Evento{
 		System.out.println("A criatura tem " + vidaCriaturaCombate + " de vida!");
 		System.out.println("Aperte 1 para atacar e 2 para fugir");
 		int fugir = 1;
-		int decisao = sc1.nextInt();
+		int decisao;
+		
+		while(true) {
+			try {
+				decisao = sc1.nextInt();
+				break;
+			} catch(InputMismatchException e) {
+				System.out.println("Input inválido!!");
+				sc1.next();
+			}
+		}
 		
 		do {
 			if (decisao == 1) {
@@ -78,14 +90,30 @@ public class EventoCriatura extends Evento{
 				System.out.printf(criatura.getNome() + " tem %.2f de vida\n", vidaCriaturaCombate);
 				criatura.atacar(jogador);
 				System.out.println("Aperte 1 para atacar, 2 para fugir ou 3 para abrir o inventário");
-				decisao = sc1.nextInt(); }
+				while(true) {
+					try {
+						decisao = sc1.nextInt();
+						break;
+					} catch(InputMismatchException e) {
+						System.out.println("Input inválido!!");
+						sc1.next();
+					}
+				}}
 			}else if(decisao == 2) {
 				System.out.println("Voce fugiu!!!");
 				fugir = decisao;
 			}else if(decisao == 3) {
 				Display.displayInventario();
 				System.out.println("Aperte 1 para realizar um ataque ou 2 para fugir");
-				decisao = sc1.nextInt();
+				while(true) {
+					try {
+						decisao = sc1.nextInt();
+						break;
+					} catch(InputMismatchException e) {
+						System.out.println("Input inválido!!");
+						sc1.next();
+					}
+				};
 			}else {
 				System.out.println("Numero inválido!");
 				System.out.println("Aperte 1 para atacar e 2 para fugir");
