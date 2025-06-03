@@ -21,6 +21,12 @@ public abstract class Personagem {
 	private String descricao;
 	private double dano;
 	
+	private double vidaTotal;
+	private int fomeTotal;
+	private int sedeTotal;
+	private int sanidadeTotal;
+	private int energiaTotal;
+	
 	
 	 public Personagem(String nome,String descricao,double dano, double vida, int fome, int sede, int energia, int sanidade, int tamanhoInventario,double peso,double defesa) {
 		//Aqui tem o Construtor do personagem com todos os atributos
@@ -36,8 +42,14 @@ public abstract class Personagem {
 		this.inventário = new Inventario(tamanhoInventario);
 		this.peso = peso;
 		this.defesa = defesa;
+		
 		this.setDescricao(descricao);
 		this.setDano(dano);
+		this.setVidaTotal(vida);
+		this.setFomeTotal(fome);
+		this.setSedeTotal(sede);
+		this.setSanidadeTotal(sanidade);
+		this.setEnergiaTotal(energia);
 		
 	}
 	 
@@ -96,20 +108,40 @@ public abstract class Personagem {
 		 return this.vida;
 	 }
 	 
+	 public void setVida(double vida) {
+		 this.vida = vida;
+	 }
+	 
 	 public int getFome() {
 		 return this.fome;
+	 }
+	 
+	 public void setFome(int fome) {
+		 this.fome = fome;
 	 }
 	 
 	 public int getSede() {
 		 return this.sede;
 	 }
 	 
+	 public void setSede(int sede) {
+		 this.sede = sede;
+	 }
+	 
 	 public int getEnergia() {
 		 return this.energia;
 	 }
 	 
+	 public void setEnergia(int energia) {
+		 this.energia = energia;
+	 }
+	 
 	 public int getSanidade() {
 		 return this.sanidade;
+	 }
+	 
+	 public void setSanidade(int sanidade) {
+		 this.sanidade = sanidade;
 	 }
 	 
 	 public double getPeso() {
@@ -205,5 +237,45 @@ public abstract class Personagem {
 	
 	public void takeFromDano(double dano) {
 		this.dano -= dano;
+	}
+
+	public double getVidaTotal() {
+		return vidaTotal;
+	}
+
+	public void setVidaTotal(double vidaTotal) {
+		this.vidaTotal = vidaTotal;
+	}
+
+	public int getFomeTotal() {
+		return fomeTotal;
+	}
+
+	public void setFomeTotal(int fomeTotal) {
+		this.fomeTotal = fomeTotal;
+	}
+
+	public int getSedeTotal() {
+		return sedeTotal;
+	}
+
+	public void setSedeTotal(int sedeTotal) {
+		this.sedeTotal = sedeTotal;
+	}
+
+	public int getSanidadeTotal() {
+		return sanidadeTotal;
+	}
+
+	public void setSanidadeTotal(int sanidadeTotal) {
+		this.sanidadeTotal = sanidadeTotal;
+	}
+
+	public int getEnergiaTotal() {
+		return energiaTotal;
+	}
+
+	public void setEnergiaTotal(int energiaTotal) {
+		this.energiaTotal = energiaTotal;
 	}
 }
