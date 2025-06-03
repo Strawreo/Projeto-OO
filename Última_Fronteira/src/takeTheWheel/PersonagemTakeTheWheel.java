@@ -90,6 +90,19 @@ public class PersonagemTakeTheWheel {
 				} else {
 					System.out.println("");
 				}
+			} else if(decisao.equals("5") || decisao.equalsIgnoreCase("Ferreiro")) {
+				System.out.println(this.array.get(4).getDescricao());
+				System.out.println(this.array.get(4).toString());
+			
+				System.out.println("Escolher este personagem?");
+				System.out.println("Y/N");
+				String dec1 = scanner.nextLine();
+			
+				if (dec1.equals("Y") || dec1.equals("y")) {
+					return this.array.get(4);
+				} else {
+					System.out.println("");
+				}
 			}
 		}
 	}

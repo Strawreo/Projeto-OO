@@ -12,12 +12,18 @@ public class InvTakeTheWheel {
 	private Personagem personagem;
 	private ArrayList<Receita> receitas;
 	
+	
 	public InvTakeTheWheel(Inventario inventario,Personagem personagem) {
 		this.inventario = inventario;
 		this.personagem = personagem;
 		InicReceitas receita = new InicReceitas();
-		this.receitas = receita.inicializarReceitas();	
+		
+		if(personagem.getNome().equals("Ferreiro")) {
+			this.receitas = receita.inicializarReceitasFerr();
+		} else {
+			this.receitas = receita.inicializarReceitas();	
 		}
+}
 	
 	public void displayInventario() throws NullPointerException{
 		
