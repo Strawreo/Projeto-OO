@@ -14,7 +14,7 @@ public class GerenciadorDeEventos {
 
 	    // Chance de nenhum evento acontecer
 	    Random rand = new Random();
-	    if (rand.nextDouble() < 0.2) { // 20% de chance de local seguro
+	    if (rand.nextDouble() < 0.2) {
 	        return null;
 	    }
 	    // se não achar um local seguro, algum evento de criatura, climatico ou de item será encontrado
@@ -169,7 +169,7 @@ public class GerenciadorDeEventos {
 		jogador.perderEnergia(energia);
 		
 		System.out.println("\n>>> Desgaste natural do turno <<<");
-	    System.out.printf("Fome +%d | Sede +%d | Energia -%d\n", fome, sede, energia);
+	    System.out.printf("Fome -%d | Sede -%d | Energia -%d\n", fome, sede, energia);
 	    
 	    // controle de status para perder vida se a fome e a sede estiverem muito altas
 	    
