@@ -57,8 +57,8 @@ public abstract class Personagem {
 	 //e assim eu só chamar o metodo nas classes filho para printar os stats da classe
 	 
 	 public String toString() {
-			return "Vida: " + this.vida + "/100\n" + "Fome: " + this.fome + "/100\n" + "Sede: " + this.sede + "/100\n" + 
-					"Energia: " + this.energia + "/100\n" + "Sanidade: " + this.sanidade + "/100\n" + "Tamanho do inventário: " + this.tamanhoInventario + "\n" + "Defesa: " + this.defesa + "\n" + "Dano: " + this.dano + "\n" + "Peso total carregado: " + this.peso + "\n";
+			return "Vida: " + this.vida + "/"+ this.vidaTotal + "\n" + "Fome: " + this.fome + "/"+ this.fomeTotal + "\n" + "Sede: " + this.sede + "/"+ this.sedeTotal + "\n" + 
+					"Energia: " + this.energia + "/"+ this.sedeTotal + "\n" + "Sanidade: " + this.sanidade + "/"+ this.sanidadeTotal + "\n" +  "Defesa: " + this.defesa + "\n" + "Dano: " + this.dano + "\n" + "Peso total carregado: " + this.peso + "\n";
 			
 		}
 	 public void perderVida(double danoBruto) {
@@ -269,5 +269,9 @@ public abstract class Personagem {
 
 	public void setEnergiaTotal(int energiaTotal) {
 		this.energiaTotal = energiaTotal;
+	}
+	
+	public int getTamanhoInventario() {
+		return this.tamanhoInventario;
 	}
 }
