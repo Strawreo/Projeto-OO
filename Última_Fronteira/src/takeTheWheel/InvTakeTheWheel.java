@@ -29,7 +29,8 @@ public class InvTakeTheWheel {
 		System.out.println("3.Usar");
 		System.out.println("4.Inspecionar");
 		System.out.println("5.Criar");
-		System.out.println("6.Sair do Inventário");
+		System.out.println("6.Status");
+		System.out.println("7.Sair do Inventário");
 		
 		String C = this.scanner.nextLine();
 		
@@ -96,7 +97,15 @@ public class InvTakeTheWheel {
 			
 		}
 		
-		else if (C.equals("Sair do Inventário") || C.equals("6")) {
+		else if(C.equalsIgnoreCase("Status") || C.equals("6")) {
+			
+			String string = this.personagem.toString();
+			System.out.println(string);
+			this.displayInventario();
+			
+		}
+		
+		else if (C.equals("Sair do Inventário") || C.equals("7")) {
 			
 			System.out.println("Saindo do Inventário");
 			System.out.println("Prosseguindo ao próximo turno!");
