@@ -54,7 +54,7 @@ public abstract class Ambiente {
 	public abstract ArrayList<Evento> eventosPossiveis();// todas as classes filhas de Ambiente precisam obrigatoriamente implementar esse método
 	
 	public List<Evento> getEventosPossiveis(){
-		 return new ArrayList<>(eventos);// lista defensiva para evitar problemas no futuro(opcional)
+		 return new ArrayList<>(eventos);// lista defensiva para evitar problemas no futuro
 	}
 	// metodo para adicionar e remover eventos, se necessário
 	public void adicionarEvento(Evento e) {
