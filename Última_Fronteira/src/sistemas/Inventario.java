@@ -134,8 +134,11 @@ public class Inventario {
         				inventario.remove(i);
             			inventario.add(null);
         			}
-        			
-        			System.out.println("Item descartado!!: " + nomeItem);
+        			try {
+        			System.out.println("Item descartado!!: " + inventario.get(i).getNome());}
+        			catch(NullPointerException e) {
+        				System.out.println("Item descartado!!");
+        			}
     			}
     		}
     			

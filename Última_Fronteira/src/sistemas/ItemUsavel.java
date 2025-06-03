@@ -26,6 +26,22 @@ public class ItemUsavel extends ClassItem {
 		personagem.addToEnergia(this.energia);
 		personagem.addToSanidade(this.sanidade);
 		
+		if(personagem.getVida()> personagem.getVidaTotal()) {
+			personagem.setVida(personagem.getVidaTotal());
+		} 
+		if(personagem.getFome()> personagem.getFomeTotal()) {
+			personagem.setFome(personagem.getFomeTotal());
+		} 
+		if(personagem.getSede()> personagem.getSedeTotal()) {
+			personagem.setSede(personagem.getSedeTotal());
+		} 
+		if(personagem.getEnergia()>personagem.getEnergiaTotal()) {
+			personagem.setEnergia(personagem.getEnergiaTotal());
+		} 
+		if(personagem.getSanidade()>personagem.getSanidadeTotal()) {
+			personagem.setSanidade(personagem.getSanidadeTotal());
+		}
+		
 		System.out.println(this.getNome() + " Usado!");
 		System.out.println(personagem.toString());
 		
