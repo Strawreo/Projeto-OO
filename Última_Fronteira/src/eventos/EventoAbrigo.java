@@ -20,6 +20,8 @@ public class EventoAbrigo extends Evento{
 		System.out.println("Você passa a noite no abrigo, descansa um pouco. Pensa nos próximos passos");
 		jogador.addToEnergia(30);
 		jogador.addToSanidade(20);
+		System.out.println(jogador.getEnergia());
+		System.out.println(jogador.getSanidade());
 	}
 
 }

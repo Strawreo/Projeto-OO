@@ -83,7 +83,7 @@ public class GerenciadorDeEventos {
 	public boolean verificarStatusDeAlerta(Personagem jogador) {
 		boolean alerta = false;
 		
-		if (jogador.getVida() <= 80) {
+		if (jogador.getVida() <= 50) {
 			System.out.println("\n>>> SUA VIDA ESTÁ BAIXA <<<");
 	        System.out.println("Use algum item para se curar \n");
 			alerta = true;
@@ -147,6 +147,41 @@ public class GerenciadorDeEventos {
 			return true;
 		}
 		return false;
+	}
+	public void desgasteNaturalDoPersonagem(Ambiente ambiente, Personagem jogador) {
+		int fome = 5;
+		int sede = 5;
+		int energia = 5;
+		
+		// crio a variavel para pegar o nome do ambiente, e o desgaste mudar de acordo com a dificuldade de cada ambiente
+		String nomeAmbiente = ambiente.getNomeAmbiente().toLowerCase();
+		
+		if (nomeAmbiente.contains("deserto")) {
+			fome *= 2;
+			sede *= 2;
+		}
+		if (nomeAmbiente.contains("montanha")) {
+			energia *= 2;
+		}
+		
+		jogador.sentirFome(fome);
+		jogador.sentirSede(sede);
+		jogador.perderEnergia(energia);
+		
+		System.out.println("\n>>> Desgaste natural do turno <<<");
+	    System.out.printf("Fome +%d | Sede +%d | Energia -%d\n", fome, sede, energia);
+	    
+	    // controle de status para perder vida se a fome e a sede estiverem muito altas
+	    
+	    if (jogador.getFome() <= 20) {
+	    	jogador.perderVida(2);
+	    	System.out.println("Você está faminto! Perdeu 2 de vida.");
+	    }
+	    if (jogador.getSede() <= 20) {
+	        jogador.perderVida(2);
+	        System.out.println("Você está desidratado! Perdeu 2 de vida.");
+	    }
+	    
 	}
 
 }
