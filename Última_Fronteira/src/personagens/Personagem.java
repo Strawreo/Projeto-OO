@@ -57,8 +57,8 @@ public abstract class Personagem {
 	 //e assim eu só chamar o metodo nas classes filho para printar os stats da classe
 	 
 	 public String toString() {
-			return "Vida: " + this.vida + "\n" + "Fome: " + this.fome + "\n" + "Sede: " + this.sede + "\n" + 
-					"Energia: " + this.energia + "\n" + "Sanidade: " + this.sanidade + "\n" + "Tamanho do inventário: " + this.tamanhoInventario + "\n";
+			return "Vida: " + this.vida + "/100\n" + "Fome: " + this.fome + "/100\n" + "Sede: " + this.sede + "/100\n" + 
+					"Energia: " + this.energia + "/100\n" + "Sanidade: " + this.sanidade + "/100\n" + "Tamanho do inventário: " + this.tamanhoInventario + "\n" + "Defesa: " + this.defesa + "\n" + "Dano: " + this.dano + "\n" + "Peso total carregado: " + this.peso + "\n";
 			
 		}
 	 public void perderVida(double danoBruto) {
@@ -73,29 +73,16 @@ public abstract class Personagem {
 		}
 	
 	 public void sentirFome(int dano) {
-			System.out.println("Sentindo fome...");
-			this.fome += dano;
-			if(this.fome >= 40 && this.vida > 0) {
-				this.vida-= 2;
-			}
-			System.out.println("Vida atual é " + vida);
-			System.out.println("Fome atual é " + fome);
-			
+			this.fome -= dano;
+			if (this.fome < 0)this.fome = 0;
 		}
 	 public void sentirSede(int dano) {
-		 System.out.println("Sentindo sede...");
-		 this.sede += dano;
-		 if(sede >= 40 && this.vida > 0) {
-			 this.vida -=2;
-		 }
-		 System.out.println("A vida atual é " + vida);
-		 System.out.println("A sede atual é " + sede);
-		 
+		 this.sede -= dano;
+		 if (this.sede < 0)this.sede = 0;
 	 }
 	  public void perderEnergia(int dano) {
 			this.energia -= dano;
 			if (this.energia < 0)this.energia = 0;
-			System.out.println(nome + " agora tem " + energia + " de energia.\n");
 	 }
 	 public void perderSanidade(int dano) {
 			this.sanidade -= dano;
@@ -177,26 +164,31 @@ public abstract class Personagem {
 	 public void addToVida(int vida) {
 		 
 		 this.vida += vida;
+		 if (this.vida > 100)this.vida = 100;
 	 }
 	 
 	 public void addToSede(int sede) {
 		 
 		 this.sede += sede;
+		 if (this.sede > 100)this.sede = 100;
 	 }
 	 
 	 public void addToFome(int fome) {
 		 
 		 this.fome += fome;
+		 if (this.fome > 100)this.fome = 100;
 	 }
 	 
 	 public void addToSanidade(int sanidade) {
 		 
 		 this.sanidade += sanidade;
+		 if (this.sanidade > 100)this.sanidade = 100;
 	 }
 	 
 	 public void addToEnergia(int energia) {
 		 
 		 this.energia += energia;
+		 if (this.energia > 100)this.energia = 100;
 	 }
 	 
 	 public void takeFromDefesa(double d) {
