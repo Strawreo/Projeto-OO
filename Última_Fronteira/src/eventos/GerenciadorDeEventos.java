@@ -14,7 +14,7 @@ public class GerenciadorDeEventos {
 
 	    // Chance de nenhum evento acontecer
 	    Random rand = new Random();
-	    if (rand.nextDouble() < 0.2) {
+	    if (rand.nextDouble() < 0.2) { // 20% de chance de local seguro
 	        return null;
 	    }
 	    // se não achar um local seguro, algum evento de criatura, climatico ou de item será encontrado
@@ -40,7 +40,6 @@ public class GerenciadorDeEventos {
         if (evento != null) {
         	
         	if (evento instanceof EventoItem) {
-        		System.out.println("Evento de Item encontrado!"); //debugging
         		((EventoItem)evento).executar(jogador, Inv);
         		
         	} else {
@@ -54,16 +53,16 @@ public class GerenciadorDeEventos {
 	 * ele entra nas condicionais dele, se tiver tudo certo, ele retorna true e o
 	 * jogo continua
 	 */
-	public boolean processarTurno(Personagem jogador, Evento evento, InvTakeTheWheel inv) {
+	public boolean processarTurno(Personagem jogador, Evento evento, InvTakeTheWheel inv,Ambiente ambiente) {
 		 if (evento == null) {
 		        System.out.println("Você encontrou um local calmo...");
 		        
 		        double chanceNarrativa = Math.random();
 		        
-		        if (chanceNarrativa < 0.3) {
+		        if (chanceNarrativa < 0.3 &&! ambiente.getNomeAmbiente().equals("Ruínas.")) {
 		            System.out.println("Você encontrou um abrigo.");
 		            new EventoAbrigo().executar(jogador, inv);
-		        } else if (chanceNarrativa < 0.6) {
+		        } else if (chanceNarrativa < 0.6 &&! ambiente.getNomeAmbiente().equals("Ruínas.")) {
 		            System.out.println("Você encontrou um estranho pelo caminho...");
 		            new EventoNPC().executar(jogador, inv);
 		        } else {
@@ -169,7 +168,7 @@ public class GerenciadorDeEventos {
 		jogador.perderEnergia(energia);
 		
 		System.out.println("\n>>> Desgaste natural do turno <<<");
-	    System.out.printf("Fome -%d | Sede -%d | Energia -%d\n", fome, sede, energia);
+	    System.out.printf("Fome +%d | Sede +%d | Energia -%d\n", fome, sede, energia);
 	    
 	    // controle de status para perder vida se a fome e a sede estiverem muito altas
 	    

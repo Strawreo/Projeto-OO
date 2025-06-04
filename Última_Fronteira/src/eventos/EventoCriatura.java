@@ -74,7 +74,10 @@ public class EventoCriatura extends Evento{
 				System.out.printf("Você causou %.2f de dano!\n", danoReal);
 				if (vidaCriaturaCombate <= 0) {
 					System.out.println("Você ganhou!!");
-					jogador.getInventario().obter(this.itensCraft.get(random.nextInt(0,7)), jogador);
+					if (criatura.getNome().equals("Rei Caído")) {
+						break;
+					}else {
+					jogador.getInventario().obter(this.itensCraft.get(random.nextInt(0,7)), jogador);}
 					
 					if (jogador.getNome().equals("Rastreador")) {
 						int aleatorio = random.nextInt(0,2);

@@ -5,7 +5,6 @@ import java.util.Random;
 
 import personagens.Personagem;
 import sistemas.ClassItem;
-import sistemas.InicItensCraft;
 import sistemas.InicItensEquip;
 import sistemas.InicItensUsa;
 import takeTheWheel.InvTakeTheWheel;
@@ -14,7 +13,6 @@ public abstract class EventoItem extends Evento {
 	
 	private ArrayList<ClassItem> itensUsa = new InicItensUsa().inicializarItensUsa();
 	private ArrayList<ClassItem> itensEquip = new InicItensEquip().Inicializar_ItensEquip();
-	/*private ArrayList<ClassItem> itensCraft = new InicItensCraft().inicializarItensCraft();*/
 	
 	public EventoItem(String nome) {
 		super(
@@ -42,11 +40,5 @@ public abstract class EventoItem extends Evento {
 			jogador.getInventario().obter(itensUsa.get(i), jogador);
 		
 		}
-		/*else if (num == 3) {
-			
-			int i = random.nextInt(0,7);
-			jogador.getInventario().obter(itensCraft.get(i), jogador);
-		}*/
-		
 	}
 }
