@@ -59,9 +59,9 @@ Exemplos de eventos
 
 Autor
 
-* Desenvolvido por **Diego Augusto** como projeto de estudo em Java e POO.
-* Linkedin: https://www.linkedin.com/in/diego-amaral-230b09201/
-
+* Desenvolvido por **Diego Augusto** e **Eryck Emmanuel** como projeto de estudo em Java e POO.
+* Linkedin "*Diego*": https://www.linkedin.com/in/diego-amaral-230b09201/
+* Linkedin "*Eryck*": https://www.linkedin.com/in/eryck-emmanuel-figueiredo-cabral-72654a369/
 ---
 
 > "A Última Fronteira não é apenas um lugar, é o teste final de sobrevivência."
