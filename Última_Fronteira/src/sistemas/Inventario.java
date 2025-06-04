@@ -342,7 +342,7 @@ public class Inventario {
     	boolean isInteger = true;
     	
     	try {
-    		int numero = Integer.parseInt(nome);
+    		Integer.parseInt(nome);
     	} catch(NumberFormatException e) {
     		isInteger = false;
     	}
@@ -350,7 +350,6 @@ public class Inventario {
     	if(isInteger) {
     		try {
     			int numero = Integer.parseInt(nome);
-    			ClassItem item = this.inventario.get(numero-1);
     			if(this.inventario.get(numero-1) == null) {
     				System.out.println("Slot Vazio!");
     				return new ReadInventario(false,-1);
