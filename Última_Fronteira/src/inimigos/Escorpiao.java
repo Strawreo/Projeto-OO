@@ -14,7 +14,6 @@ public class Escorpiao extends Criatura{
 	public void atacar(Personagem jogador) {
 		System.out.println("Um escorpião apareceu sem você perceber e picou você");
 		jogador.perderVida(8);
-		jogador.perderSanidade(70);
 	}
 
 }

@@ -14,7 +14,6 @@ public class Lobo extends Criatura{
 	public void atacar(Personagem jogador) {
 		System.out.println("Um lobo ataca rapidamente");
 		jogador.perderVida(2);
-		jogador.perderSanidade(8);
 	}
 
 }

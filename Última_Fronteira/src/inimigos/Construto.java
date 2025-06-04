@@ -12,7 +12,6 @@ public class Construto extends Criatura{
 	public void atacar(Personagem jogador) {
 		System.out.println("O pináculo da engenharia lhe ataca \nUm Construto se atira em você");
 		jogador.perderVida(25);
-		jogador.perderSanidade(10);
 	}
 
 }
