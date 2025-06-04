@@ -18,7 +18,7 @@ public class PersonagemTakeTheWheel {
 		System.out.println("Bem vindo a Última Fronteira");
 		System.out.println("Aperte Enter para começar");
 		
-		String emi = scanner.nextLine();
+		scanner.nextLine();
 	}
 	
 	public Personagem escolha() {

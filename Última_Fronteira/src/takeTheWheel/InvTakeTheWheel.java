@@ -133,16 +133,15 @@ public class InvTakeTheWheel {
 		boolean isInteger = true;
 
 		try {
-		    int numero = Integer.parseInt(nome);
+		    Integer.parseInt(nome);
 		} catch (NumberFormatException e) {
 		    isInteger = false;
-		    System.out.println("Entrada inválida!");
 		}
 
 		if (isInteger) {
 			try {
 				int numero = Integer.parseInt(nome);
-				Receita receita = this.receitas.get(numero-1);
+				this.receitas.get(numero);
 				return new ReadInventario(true,numero-1);
 			} catch (IndexOutOfBoundsException e) {
 				System.out.println("Entrada inválida!");
