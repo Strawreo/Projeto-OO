@@ -27,7 +27,6 @@ public class AmbienteRuina extends Ambiente{
 	    criaturasRuina.add(new Construto());
 	    
 	    eventos.add(new EventoCriatura(criaturasRuina));
-		eventos.add(new EventoItemRuina());
 		
 		return eventos; 
 	}

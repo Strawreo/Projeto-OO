@@ -45,12 +45,4 @@ public class AmbienteFloresta extends Ambiente {
 		
 		return eventos; // aqui eu crio uma lista para uso próprio na classe, então não tem problema de encapsulamento
 	}
-	
-
-	
-	
-	
-
-	
-
 }
