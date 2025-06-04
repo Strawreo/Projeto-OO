@@ -168,7 +168,7 @@ public class GerenciadorDeEventos {
 		jogador.perderEnergia(energia);
 		
 		System.out.println("\n>>> Desgaste natural do turno <<<");
-	    System.out.printf("Fome +%d | Sede +%d | Energia -%d\n", fome, sede, energia);
+	    System.out.printf("Fome -%d | Sede -%d | Energia -%d\n", fome, sede, energia);
 	    
 	    // controle de status para perder vida se a fome e a sede estiverem muito altas
 	    
